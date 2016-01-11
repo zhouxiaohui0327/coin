@@ -1,0 +1,18 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: Arial, "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", \5b8b\4f53, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 26px;
+}
+header{
+    background-color: #c0c0c0;
+}
+header .welcome{
+    line-height: 30px;
+    margin: 0 20px 0 0;
+    color: #1faa34;
+}
+.wrap{
+    margin-top: 20px;
+}
