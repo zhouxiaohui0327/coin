@@ -10,6 +10,11 @@
 </head>
 <body>
 <div class="container">
+    <div class="bank_icon">
+        <img width="320" src="/coin/public/img/zhonghang.jpg" alt=""/>
+    </div>
+
+
     <a href="<?php echo ($select["apply_url"]); ?>" class="btn btn-info">预约</a>
     <a href="<?php echo ($select["query_url"]); ?>" class="btn btn-success">查询</a>
 </div>

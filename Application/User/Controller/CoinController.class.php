@@ -16,6 +16,9 @@ class CoinController extends Controller{
             $coin_id = 1 ;
         }
 
+        $coinModel =M('coin');
+
+        $coinInfo = $coinModel->where('')->find();
         if(empty($area)){
            die("<script>alert('请选择地区');history.back();</script>");
         }
