@@ -9,7 +9,7 @@ class IndexController extends Controller {
          */
         $cookie =  $_COOKIE['user'];
         if (!isset($_COOKIE["user"])) {
-            header('location:/coin/index.php/Index/enter');
+            header('location:/Index/enter');
         }
 
         /**
@@ -71,7 +71,7 @@ class IndexController extends Controller {
         {
             if($userModel['password'] == md5($password))
             {
-                header("location:/coin/index.php/Index/admin.html");
+                header("location:/Index/admin.html");
                 setcookie("user","$account",time()+3600);
             }
             else
