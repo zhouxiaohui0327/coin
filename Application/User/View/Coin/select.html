@@ -17,7 +17,7 @@
 </header>
 
 <div class="container">
-    <form action="/index.php/Coin/selectPost?coin_id=1" class="form-horizontal" method="post" >
+    <form action="/index.php/Coin/selectPost?coin_id=1" class="form-horizontal" method="get" >
         <div class="form-group">
             <label class="control-label col-md-5 text-center" style="display:block">--请选择地区--</label>
             <div class="col-sm-2">

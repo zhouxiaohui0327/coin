@@ -12,15 +12,30 @@
 </head>
 <body>
 <div class="container" style="padding: 0">
-    <div class="bank_icon">
-        <img width="100%" src="/Public/img/zhonghang.jpg" alt=""/>
+    <div class="bank_icon" style="text-align: center;">
+
+
+        <if condition = "$select['id'] ==1">
+            <img width="80%" src="/Public/img/gongshang.jpg" alt=""/>
+
+        <elseif condition = "$select['id'] ==2" />
+            <img width="80%" src="/Public/img/jianshe.jpg" alt=""/>
+
+        <elseif condition = "$select['id'] ==3" />
+            <img width="80%" src="/Public/img/nongye.jpg" alt=""/>
+
+        <elseif condition = "$select['id'] ==4" />
+            <img width="80%" src="/Public/img/zhonghang.jpg" alt=""/>
+        </if>
+
     </div>
 
     <p class="text-center">您所在的区域：<span style="color:red">{$area}</span></p>
     <p class="text-center">兑换银行：<span style="color:red">{$select.name}</span></p>
     <div class="text-center" style="margin-top: 20px">
-        <a href="{$select.apply_url}" class="btn btn-success" style="margin-right: 5px;">预约</a>
-        <a href="{$select.query_url}" class="btn btn-info" style="margin-left: 5px;">查询</a>
+        <a href="{$select.apply_url}" class="btn btn-success" style="width:80%">点击预约</a>
+        <p></p>
+        <a href="{$select.query_url}" class="btn btn-info" style="width:80%">点击查询</a>
     </div>
 </div>
 </body>

@@ -10,7 +10,7 @@ class CoinController extends Controller{
 
     public function selectPost(){
         header("Content-type:text/html;charset=utf-8");
-        $area = trim(I('post.area'));
+        $area = trim(I('get.area'));
         $coin_id =I('get.coin_id');
         if(!isset($_GET['coin_id'])){
             $coin_id = 1 ;
@@ -32,7 +32,10 @@ class CoinController extends Controller{
 
         $map3['id'] = $result ;
         $map3['coin_id'] = $coin_id ;
+
         $select = $bank->where($map3)->find();
+
+
 
 
         $this->assign('select',$select);
