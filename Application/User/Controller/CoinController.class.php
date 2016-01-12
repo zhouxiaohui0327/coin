@@ -35,17 +35,52 @@ class CoinController extends Controller{
 
         $select = $bank->where($map3)->find();
 
-
-
-
         $this->assign('select',$select);
         $this->assign('area',$area);
         $this->assign('coinInfo',$coinInfo);
 
 
         $this->display();
-
-
-
     }
+
+
+    /**
+     * 能取到地区就自动跳转到selectPost页面
+     */
+    public function location(){
+                $ip = $_SERVER["REMOTE_ADDR"];
+//        $ip = "219.137.148.0";
+
+        function GetIpLookup($ip){
+            // 根据ip地址获取省份，城市
+            $res = @file_get_contents('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js&ip=' . $ip);
+            if(empty($res)){ return false; }
+            $jsonMatches = array();
+            preg_match('#\{.+?\}#', $res, $jsonMatches);
+            if(!isset($jsonMatches[0])){ return false; }
+            $json = json_decode($jsonMatches[0], true);
+            if(isset($json['ret']) && $json['ret'] == 1){
+                $json['ip'] = $ip;
+                unset($json['ret']);
+            }else{
+                return false;
+            }
+            return $json;
+        }
+        $ipInfos = GetIpLookup($ip);
+
+        $city = $ipInfos["city"];
+        $province = $ipInfos['province'];
+
+        if($city=="深圳"){
+            //特殊情况：判断城市是深圳的话，area就为深圳
+            header("location:/index.php/Coin/selectPost?coin_id=1&area=$city");
+        }elseif(empty($ipInfos)){
+            //获取不到ip信息的情况下跳转到select页面
+            header("location:/index.php/Coin/select");
+        }else{
+            header("location:/index.php/Coin/selectPost?coin_id=1&area=$province");
+        }
+    }
+
 }

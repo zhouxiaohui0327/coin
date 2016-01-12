@@ -28,7 +28,8 @@
 
     </div>
 
-    <p class="text-center">您所在的区域：<span style="color:red"><?php echo ($area); ?></span></p>
+    <p class="text-center">您所在的区域：<span style="color:red"><?php echo ($area); ?></span>
+        <a style="color:#c4c4c4" href="/index.php/Coin/select">修改</a></p>
     <p class="text-center">兑换银行：<span style="color:red"><?php echo ($select["name"]); ?></span></p>
     <div class="text-center" style="margin-top: 20px">
         <a href="<?php echo ($select["apply_url"]); ?>" class="btn btn-success" style="width:80%">点击预约</a>
