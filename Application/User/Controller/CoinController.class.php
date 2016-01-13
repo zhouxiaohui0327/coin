@@ -134,4 +134,24 @@ class CoinController extends Controller{
         }
     }
 
+
+
+    /**
+     * 不在预约时间内跳转页面
+     */
+
+    public function notice(){
+
+
+        $coin_id = I('get.coin_id');
+        $coin =M('coin');
+        $map['coin_id'] = $coin_id;
+        $coinInfo = $coin -> where($map) -> find();
+
+        $this->assign('coinInfo',$coinInfo);
+
+
+
+        $this->display();
+    }
 }
