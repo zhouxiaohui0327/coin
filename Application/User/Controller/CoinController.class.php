@@ -145,12 +145,10 @@ class CoinController extends Controller{
 
         $coin_id = I('get.coin_id');
         $coin =M('coin');
-        $map['coin_id'] = $coin_id;
+        $map['id'] = $coin_id;
         $coinInfo = $coin -> where($map) -> find();
 
         $this->assign('coinInfo',$coinInfo);
-
-
 
         $this->display();
     }

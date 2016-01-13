@@ -15,7 +15,7 @@
         <p class="text-center" style="color:red">非常抱歉，目前不在预约时间段</p>
     </div>
     <div class="text-center">
-        <a class="btn btn-info btn-sm text-center" style="width:80%" href="<?php echo ($coinInfo['notice_url']); ?>">点击查看央行公告</a>
+        <a class="btn btn-info btn-sm text-center" style="width:80%" href="<?php echo ($coinInfo["notice_url"]); ?>">点击查看央行公告</a>
     </div>
     <div class="text-center" style="margin-top: 20px">
         <a class="btn btn-success btn-sm text-center" style="width:80%" href="http://shequ.yunzhijia.com/thirdapp/forum/network/56946d80e4b01b76b8595ed2">去论坛逛逛</a>
