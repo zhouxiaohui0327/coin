@@ -3,7 +3,7 @@
  */
 function loginOut() {
     if (confirm("确定要退出？")) {
-        self.location = 'http://127.0.0.1/coin/index.php/Index/enter';
+        self.location = '/index.php/Index/enter';
     }
 }
 

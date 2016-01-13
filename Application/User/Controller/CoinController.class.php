@@ -142,7 +142,6 @@ class CoinController extends Controller{
 
     public function notice(){
 
-
         $coin_id = I('get.coin_id');
         $coin =M('coin');
         $map['id'] = $coin_id;
@@ -152,5 +151,5 @@ class CoinController extends Controller{
 
         $this->display();
     }
-    
+
 }

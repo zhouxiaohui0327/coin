@@ -9,7 +9,7 @@ class IndexController extends Controller {
          */
         $cookie =  $_COOKIE['user'];
         if (!isset($_COOKIE["user"])) {
-            header('location:/Index/enter');
+            header('location:/index.php/Index/enter');
         }
 
         /**
@@ -20,8 +20,35 @@ class IndexController extends Controller {
         $nickname = $UserModel->where($map)->getField('nickname');
         $this->assign('nickname',$nickname);
 
+        /**
+         * 循环出coin表数据
+         */
 
+        $CoinModel =M('coin');
+        $coinInfo = $CoinModel -> select();
 
+        $this->assign('coinInfo',$coinInfo);
+
+        /**
+         *  循环出bank表数据
+         */
+
+        $BankModel =M('bank');
+        $bankInfo = $BankModel -> select();
+
+        $this->assign('bankInfo',$bankInfo);
+
+        /**
+         * 循环出area表数据
+         */
+
+        $areaModel =M('area');
+
+        for($i=1;$i<count($bankInfo)+1;$i++){
+             $areaInfo[$i] = $areaModel ->where("bank_id=$i")-> select();
+        }
+
+        $this -> assign('areaInfo',$areaInfo);
 
         $this->display();
 
@@ -71,7 +98,7 @@ class IndexController extends Controller {
         {
             if($userModel['password'] == md5($password))
             {
-                header("location:/Index/admin.html");
+                header("location:/index.php/Index/admin.html");
                 setcookie("user","$account",time()+3600);
             }
             else
