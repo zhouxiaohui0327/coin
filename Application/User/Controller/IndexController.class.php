@@ -167,67 +167,6 @@ class IndexController extends Controller {
     }
 
 
-    public function modifyPost(){
-        header("Content-type:text/html;charset=utf-8");
-        $id = I('get.id');
-        $map['id'] = $id;
-        $result = M('coin')->where($map)->find();
-
-        $data['coin_name'] = $result['name'];
-        $data['apply_start'] = $result['apply_start'];
-        $data['apply_end'] = $result['apply_end'];
-        $data['exchange_start'] = $result['exchange_start'];
-        $data['exchange_end'] = $result['exchange_end'];
-        $data['notice_url'] = $result['notice_url'];
-
-        $map1['coin_id']=$id;
-        $result1 =M('bank')->where($map1)->select();
-        $count = count($result1);
-
-
-        $data['bank_name']="";
-        for($i=0;$i<$count;$i++){
-//            $data['bank_name'][$i] = $result1[$i]['name'];
-//            $data['apply_url'][$i] = $result1[$i]['apply_url'];
-//            $data['query_url'][$i] = $result1[$i]['query_url'];
-
-            $data['bank_name'].=$result1[$i]['name'].",";
-            $data['apply_url'].=$result1[$i]['apply_url'].",";
-            $data['query_url'].=$result1[$i]['query_url'].",";
-        }
-
-        $data['bank_name'] = substr($data['bank_name'],0,strlen($data['bank_name'])-1);
-        $data['apply_url'] = substr($data['apply_url'],0,strlen($data['apply_url'])-1);
-        $data['query_url'] = substr($data['query_url'],0,strlen($data['query_url'])-1);
-
-
-
-        $data['area']="";
-        for($i=0;$i<$count;$i++){
-            $map2['bank_id'] =$result1[$i]['id'];
-            $result2[$i] = M('area')->where($map2)->select();
-            $count2 = count($result2[$i]);
-            for($x=0;$x<$count2;$x++){
-                $data['area'][$i][$x] = $result2[$i][$x]['area'];
-           }
-        }
-
-//        $count111 =count($data['area']);
-//
-//        for($i=0;$i<$count111;$i++){
-//            $count222 =count($data['area'][$i]);
-//
-//            for($x=0;$x<$count222;$x++){
-//               $data['area'][]= $data['area'][$i][$x].",";
-//
-//            }
-//        }
-//        print_r($data['area']);
-//
-//die();
-        $this->ajaxReturn($data);
-    }
-
     public function modify(){
         header("Content-type:text/html;charset=utf8");
 
@@ -317,7 +256,59 @@ class IndexController extends Controller {
 
     }
 
+    public function modify_coin(){
+        header("Content-type:text/html;charset=utf8");
+        $id=I('get.id');
+        $name=I('get.name');
+        $apply_start=I('get.apply_start');
+        $apply_end=I('get.apply_end');
+        $exchange_start=I('get.exchange_start');
+        $exchange_end=I('get.exchange_end');
+        $notice_url=I('get.notice_url');
 
+
+
+        $Coin = M('coin');
+        $data=array();
+        if(!empty($name)){
+            $data['name']= $name;
+        }
+        if(!empty($apply_start)){
+            $data['apply_start']= $apply_start;
+        }
+        if(!empty($apply_end)){
+            $data['apply_end']= $apply_end;
+        }
+        if(!empty($exchange_start)){
+            $data['exchange_start']= $exchange_start;
+        }
+        if(!empty($exchange_end)){
+            $data['exchange_end']= $exchange_end;
+        }
+        if(!empty($notice_url)){
+            $data['notice_url']= $notice_url;
+        }
+
+        $map['id'] = $id;
+        $coin_name_select =$Coin->where($map)->find();
+        $result =$Coin->where($map)->save($data);
+
+        if($result||$coin_name_select['name']==$name||$coin_name_select['apply_start']==$apply_start||$coin_name_select['apply_end']==$apply_end||$coin_name_select['exchange_start']==$exchange_start||$coin_name_select['exchange_end']==$exchange_end||$coin_name_select['notice_url']==$notice_url){
+            $result1=array();
+            $result1['success']=true;
+            $result1['data']='修改成功';
+
+            echo json_encode($result1);
+            die();
+        }else{
+            $result1=array();
+            $result1['success']=false;
+            $result1['data']='修改失败';
+            echo json_encode($result1);
+            die();
+        }
+
+    }
 
 
 

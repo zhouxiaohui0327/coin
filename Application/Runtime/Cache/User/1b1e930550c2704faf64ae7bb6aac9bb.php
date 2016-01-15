@@ -33,14 +33,13 @@
             <tbody>
             <?php if(is_array($coinInfo)): foreach($coinInfo as $key=>$vo): ?><tr>
                     <td><?php echo ($vo["id"]); ?></td>
-                    <td><?php echo ($vo["name"]); ?></td>
-                    <td><?php echo ($vo["apply_start"]); ?></td>
-                    <td><?php echo ($vo["apply_end"]); ?></td>
-                    <td><?php echo ($vo["exchange_start"]); ?></td>
-                    <td><?php echo ($vo["exchange_end"]); ?></td>
-                    <td><?php echo ($vo["notice_url"]); ?></td>
+                    <td><input name="modify_coin_name" coin_id="<?php echo ($vo["id"]); ?>" type="text" value="<?php echo ($vo["name"]); ?>" style="width:100%;border: none"/></td>
+                    <td><input name="modify_apply_start" coin_id="<?php echo ($vo["id"]); ?>" type="date" value="<?php echo ($vo["apply_start"]); ?>" style="width:100%;border: none"/></td>
+                    <td><input name="modify_apply_end" coin_id="<?php echo ($vo["id"]); ?>" type="date" value="<?php echo ($vo["apply_end"]); ?>" style="width:100%;border: none"/></td>
+                    <td><input name="modify_exchange_start" coin_id="<?php echo ($vo["id"]); ?>" type="date" value="<?php echo ($vo["exchange_start"]); ?>" style="width:100%;border: none"/></td>
+                    <td><input name="modify_exchange_end" coin_id="<?php echo ($vo["id"]); ?>" type="date" value="<?php echo ($vo["exchange_end"]); ?>" style="width:100%;border: none"/></td>
+                    <td><input name="modify_notice_url" coin_id="<?php echo ($vo["id"]); ?>" type="text" value="<?php echo ($vo["notice_url"]); ?>" style="width:100%;border: none"/></td>
                     <td>
-                        <a class="btn btn-default btn-sm" modifyId="<?php echo ($vo["id"]); ?>" id="modifyBtn" style="padding:0 10px" href="">修改</a>
                         <a class="btn btn-danger btn-sm" style="padding:0 10px" href="">删除</a>
                     </td>
                 </tr><?php endforeach; endif; ?>
@@ -48,29 +47,75 @@
         </table>
     </div>
     <script>
-        $(document).ready(function(){
-            $("#modifyBtn").click(function(e){
-                var id = $(this).attr('modifyId');
-                e.preventDefault();
-                $.get('/index.php/Index/modifyPost',{id:id},function(data){
-                    $('input[name=coin_name]').val(data['coin_name']);
-                    $('input[name=apply_start]').val(data['apply_start']);
-                    $('input[name=apply_end]').val(data['apply_end']);
-                    $('input[name=exchange_start]').val(data['exchange_start']);
-                    $('input[name=exchange_end]').val(data['exchange_end']);
-                    $('input[name=notice_url]').val(data['notice_url']);
-                    $('input[name=bank_name]').val(data['bank_name']);
-                    $('input[name=apply_url]').val(data['apply_url']);
-                    $('input[name=query_url]').val(data['query_url']);
-                    console.log(data);
-                    $('#addBtn').html("确认修改");
-                },'json');
-            })
+        $("input[name=modify_coin_name]").blur(function(){
+            var name = $(this).val();
+            var id =$(this).attr("coin_id");
+            $.get('/index.php/Index/modify_coin',{name:name,id:id},function(result1){
+                        if(result1.success){
+                        }else{
+                            alert(result1.data);
+                        }
+                    }
+                    ,'json')
+        });
+        $("input[name=modify_apply_start]").blur(function(){
+            var apply_start = $(this).val();
+            var id =$(this).attr("coin_id");
+            $.get('/index.php/Index/modify_coin',{apply_start:apply_start,id:id},function(result1){
+                        if(result1.success){
+                        }else{
+                            alert(result1.data);
+                        }
+                    }
+                    ,'json')
+        });
+        $("input[name=modify_apply_end]").blur(function(){
+            var apply_end = $(this).val();
+            var id =$(this).attr("coin_id");
+            $.get('/index.php/Index/modify_coin',{apply_end:apply_end,id:id},function(result1){
+                        if(result1.success){
+                        }else{
+                            alert(result1.data);
+                        }
+                    }
+                    ,'json')
+        });
+        $("input[name=modify_exchange_start]").blur(function(){
+            var exchange_start = $(this).val();
+            var id =$(this).attr("coin_id");
+            $.get('/index.php/Index/modify_coin',{exchange_start:exchange_start,id:id},function(result1){
+                        if(result1.success){
+                        }else{
+                            alert(result1.data);
+                        }
+                    }
+                    ,'json')
+        });
+        $("input[name=modify_exchange_end]").blur(function(){
+            var exchange_end = $(this).val();
+            var id =$(this).attr("coin_id");
+            $.get('/index.php/Index/modify_coin',{exchange_end:exchange_end,id:id},function(result1){
+                        if(result1.success){
+                        }else{
+                            alert(result1.data);
+                        }
+                    }
+                    ,'json')
+        });
+        $("input[name=modify_notice_url]").blur(function(){
+            var notice_url = $(this).val();
+            var id =$(this).attr("coin_id");
+            $.get('/index.php/Index/modify_coin',{notice_url:notice_url,id:id},function(result1){
+                        if(result1.success){
+                        }else{
+                            alert(result1.data);
+                        }
+                    }
+                    ,'json')
+        });
 
-
-
-        })
     </script>
+
     <div class="bank_wrap">
         <table class="table table-bordered table-striped table-hover">
             <thead>
@@ -145,7 +190,7 @@
                 <th colspan="8">地区</th>
             </tr>
 
-            <?php $__FOR_START_599__=1;$__FOR_END_599__=$count+1;for($i=$__FOR_START_599__;$i < $__FOR_END_599__;$i+=1){ ?><tr>
+            <?php $__FOR_START_18218__=1;$__FOR_END_18218__=$count+1;for($i=$__FOR_START_18218__;$i < $__FOR_END_18218__;$i+=1){ ?><tr>
                     <td><?php echo ($i); ?></td>
                     <?php if(is_array($areaInfo[$i])): foreach($areaInfo[$i] as $key=>$vo): ?><td><input name="modify_area" bank_id="<?php echo ($vo["bank_id"]); ?>" type="text" value="<?php echo ($vo["area"]); ?>" style="width:80px;border: none"/></td><?php endforeach; endif; ?>
                 </tr><?php } ?>
@@ -158,7 +203,6 @@
         var area = $(this).val();
         var bank_id =$(this).attr("bank_id");
         var order =$(this).parent().index();
-        console.log(order);
 
         $.get('/index.php/Index/modify_area',{area:area,bank_id:bank_id,order:order},function(result1){
                     if(result1.success){

@@ -126,3 +126,1214 @@ INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
 SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0110s ]
 SQL: SELECT * FROM `coin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
 
+[ 2016-01-15T15:43:20+08:00 ] 127.0.0.1 /index.php/Index/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: user F:\WWW\coin\Application\User\Controller\IndexController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0130s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = null LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-01-15T15:43:20+08:00 ] 127.0.0.1 /index.php/Index/enter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-01-15T15:43:23+08:00 ] 127.0.0.1 /index.php/Index/enterPost
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2016-01-15T15:43:24+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-01-15T15:43:39+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-01-15T15:43:49+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0110s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2016-01-15T15:45:42+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-01-15T15:45:47+08:00 ] 127.0.0.1 /index.php/Index/modify_area?area=%E9%87%8D%E5%BA%861&bank_id=1&order=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `area` WHERE `bank_id` = 1  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `area` WHERE `bank_id` = 1  [ RunTime:0.0020s ]
+SQL: UPDATE `area` SET `area`='重庆1' WHERE `id` = 2 AND `bank_id` = 1 [ RunTime:0.0010s ]
+
+[ 2016-01-15T15:45:49+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0090s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-01-15T15:45:52+08:00 ] 127.0.0.1 /index.php/Index/modify_area?area=%E9%87%8D%E5%BA%86&bank_id=1&order=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `area` WHERE `bank_id` = 1  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE `bank_id` = 1  [ RunTime:0.0020s ]
+SQL: UPDATE `area` SET `area`='重庆' WHERE `id` = 2 AND `bank_id` = 1 [ RunTime:0.0010s ]
+
+[ 2016-01-15T15:46:20+08:00 ] 127.0.0.1 /index.php/Index/modify?bank_name=%E4%B8%AD%E5%9B%BD%E5%B7%A5%E5%95%86%E9%93%B6%E8%A1%8C1&bank_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `bank` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `bank` SET `name`='中国工商银行1' WHERE `id` = 1 [ RunTime:0.0030s ]
+
+[ 2016-01-15T15:46:23+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-01-15T15:46:26+08:00 ] 127.0.0.1 /index.php/Index/modify?bank_name=%E4%B8%AD%E5%9B%BD%E5%B7%A5%E5%95%86%E9%93%B6%E8%A1%8C&bank_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `bank` SET `name`='中国工商银行' WHERE `id` = 1 [ RunTime:0.0020s ]
+
+[ 2016-01-15T15:46:28+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.009001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010001s ]
+
+[ 2016-01-15T15:49:55+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0110s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-01-15T15:50:08+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0090s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-01-15T15:59:21+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0110s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-01-15T15:59:51+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0110s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2016-01-15T15:59:55+08:00 ] 127.0.0.1 /index.php/Index/modify_coin?name=2016%E5%B9%B4%E8%B4%BA%E5%B2%81%E7%8C%B4%E5%B9%B4%E7%BA%AA%E5%BF%B5%E5%B8%811&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `coin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `coin` SET `name`='2016年贺岁猴年纪念币1' WHERE `id` = 1 [ RunTime:0.0010s ]
+
+[ 2016-01-15T15:59:57+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003001s ]
+
+[ 2016-01-15T16:00:02+08:00 ] 127.0.0.1 /index.php/Index/modify_coin?name=2016%E5%B9%B4%E8%B4%BA%E5%B2%81%E7%8C%B4%E5%B9%B4%E7%BA%AA%E5%BF%B5%E5%B8%81&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `coin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `coin` SET `name`='2016年贺岁猴年纪念币' WHERE `id` = 1 [ RunTime:0.0010s ]
+
+[ 2016-01-15T16:00:04+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0090s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-01-15T16:04:01+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-01-15T16:06:09+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0130s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.064003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.064003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009001s ]
+
+[ 2016-01-15T16:06:17+08:00 ] 127.0.0.1 /index.php/Index/modify_coin?apply_start=2016-01-04&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `coin` SET `id`='1',`name`='2016年贺岁猴年纪念币',`apply_start`='2016-01-06',`apply_end`='2016-01-15',`exchange_start`='2016-01-16',`exchange_end`='2016-01-23',`notice_url`='http://www.pbc.gov.cn/huobijinyinju/147948/147964/2996628/index.html',`ctime`='2016-01-15 16:00:02' WHERE `id` = 1 [ RunTime:0.0010s ]
+
+[ 2016-01-15T16:06:53+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-01-15T16:06:59+08:00 ] 127.0.0.1 /index.php/Index/modify_coin?apply_start=2016-01-05&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `coin` SET `apply_start`='2016-01-05' WHERE `id` = 1 [ RunTime:0.0010s ]
+
+[ 2016-01-15T16:07:01+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-01-15T16:08:27+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0090s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007000s ]
+
+[ 2016-01-15T16:08:41+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0090s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-01-15T16:08:56+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-01-15T16:09:13+08:00 ] 127.0.0.1 /index.php/Index/modify_coin?apply_end=2016-01-16&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `coin` SET `apply_end`='2016-01-16' WHERE `id` = 1 [ RunTime:0.0010s ]
+
+[ 2016-01-15T16:09:15+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-01-15T16:13:57+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0120s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.066003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-01-15T16:14:18+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0090s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2016-01-15T16:15:09+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0110s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-01-15T16:15:19+08:00 ] 127.0.0.1 /index.php/Index/modify_coin?exchange_start=2016-01-17&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `coin` SET `exchange_start`='2016-01-17' WHERE `id` = 1 [ RunTime:0.0010s ]
+
+[ 2016-01-15T16:15:21+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0110s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2016-01-15T16:15:30+08:00 ] 127.0.0.1 /index.php/Index/modify_coin?exchange_end=2017-01-23&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `coin` SET `exchange_end`='2017-01-23' WHERE `id` = 1 [ RunTime:0.0010s ]
+
+[ 2016-01-15T16:15:32+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2016-01-15T16:15:38+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2016-01-15T16:15:42+08:00 ] 127.0.0.1 /index.php/Index/modify_coin?exchange_end=2016-01-23&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `coin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `coin` SET `exchange_end`='2016-01-23' WHERE `id` = 1 [ RunTime:0.0000s ]
+
+[ 2016-01-15T16:15:44+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2016-01-15T16:15:50+08:00 ] 127.0.0.1 /index.php/Index/modify_coin?notice_url=http%2F%2Fwww.pbc.gov.cn%2Fhuobijinyinju%2F147948%2F147964%2F2996628%2Findex.html&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `coin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `coin` SET `notice_url`='http//www.pbc.gov.cn/huobijinyinju/147948/147964/2996628/index.html' WHERE `id` = 1 [ RunTime:0.0010s ]
+
+[ 2016-01-15T16:15:52+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0100s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-01-15T16:15:57+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0090s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-01-15T16:16:03+08:00 ] 127.0.0.1 /index.php/Index/modify_coin?apply_end=2016-01-01&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `coin` SET `apply_end`='2016-01-01' WHERE `id` = 1 [ RunTime:0.0010s ]
+
+[ 2016-01-15T16:16:05+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0090s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-01-15T16:16:52+08:00 ] 127.0.0.1 /index.php/Index/modify_coin?apply_end=2016-01-11&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `coin` SET `apply_end`='2016-01-11' WHERE `id` = 1 [ RunTime:0.0010s ]
+
+[ 2016-01-15T16:16:54+08:00 ] 127.0.0.1 /index.php/Index/admin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0090s ]
+SQL: SELECT `nickname` FROM `user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `coin` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `coin`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `bank`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `area` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=3 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `area` WHERE ( bank_id=4 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.071004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.071004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-01-15T16:17:41+08:00 ] 127.0.0.1 /index.php/Index/modify?query_url=http%3A%2F%2Fwww.ccb.com%2Fcn%2FOtherResource%2Frpretreatment%2Findex.html&bank_id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `bank` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `bank` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `bank` SET `query_url`='http://www.ccb.com/cn/OtherResource/rpretreatment/index.html' WHERE `id` = 2 [ RunTime:0.0010s ]
+
