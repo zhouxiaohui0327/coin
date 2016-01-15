@@ -7,6 +7,19 @@ class CoinController extends Controller{
         header("Content:text/html;charset=utf-8");
 
         $this->display();
+
+    }
+
+    public function notice(){
+
+        $coin_id = I('get.coin_id');
+        $coin =M('coin');
+        $map['id'] = $coin_id;
+        $coinInfo = $coin -> where($map) -> find();
+
+        $this->assign('coinInfo',$coinInfo);
+
+        $this->display();
     }
 
     public function selectPost(){
@@ -45,16 +58,6 @@ class CoinController extends Controller{
     }
 
 
-    public function notice(){
 
-        $coin_id = I('get.coin_id');
-        $coin =M('coin');
-        $map['id'] = $coin_id;
-        $coinInfo = $coin -> where($map) -> find();
-
-        $this->assign('coinInfo',$coinInfo);
-
-        $this->display();
-    }
 
 }
