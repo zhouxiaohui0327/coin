@@ -233,22 +233,98 @@ class IndexController extends Controller {
 
         $bank_name=I('get.bank_name');
         $bank_id=I('get.bank_id');
-
+        $apply_url=I('get.apply_url');
+        $query_url=I('get.query_url');
 
         $Bank = M('bank');
-        $data['name'] = $bank_name;
+        $data=array();
+
+        if(!empty($bank_name)){
+            $data['name']= $bank_name;
+        }
+        if(!empty($apply_url)){
+            $data['apply_url']=$apply_url;
+        }
+        if(!empty($query_url)){
+            $data['query_url']=$query_url;
+        }
+
+
+//        $data['name'] = $bank_name;
         $map['id'] = $bank_id;
+
+        $bank_name_select =$Bank->where($map)->find();
         $result =$Bank->where($map)->save($data);
 
 
-        if(is_int($result)){
-            $this->ajaxReturn('','修改成功',1);
+        if($result||$bank_name_select['name']==$bank_name||$bank_name_select['apply_url']==$apply_url||$bank_name_select['query_url']==$query_url){
+            $result1=array();
+            $result1['success']=true;
+            $result1['data']='修改成功';
+
+            echo json_encode($result1);
+            die();
         }else{
-            $this->ajaxReturn('','修改失败',0);
+            $result1=array();
+            $result1['success']=false;
+            $result1['data']='修改失败';
+            echo json_encode($result1);
+            die();
+        }
+    }
+
+
+    public function modify_area(){
+        header("Content-type:text/html;charset=utf8");
+
+        $bank_id=I('get.bank_id');
+        $area=I('get.area');
+        $order =I('get.order');
+
+        $Area = M('area');
+        $map['bank_id'] =$bank_id;
+        $Area_name =$Area ->where($map)->select();
+
+        $area1 = $Area_name[$order-1]['area'];
+
+
+        $map1['name'] = $area1;
+        $map1['bank_id'] =$bank_id;
+        $Area_id =$Area ->where($map1)->select();
+
+        $id = $Area_id[$order-1]['id'];
+
+        $map2['id']=$id;
+        $map2['bank_id'] = $bank_id;
+        $data['area']=$area;
+        $result = $Area->where($map2)->save($data);
+
+        if($result||$area1==$area){
+            $result1=array();
+            $result1['success']=true;
+            $result1['data']='修改成功';
+
+            echo json_encode($result1);
+            die();
+        }else{
+            $result1=array();
+            $result1['success']=false;
+            $result1['data']='修改失败';
+            echo json_encode($result1);
+            die();
         }
 
 
     }
+
+
+
+
+
+
+
+
+
 
 
 

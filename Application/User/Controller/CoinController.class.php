@@ -5,56 +5,56 @@ use Think\Controller;
 class CoinController extends Controller{
     public function select(){
         header("Content:text/html;charset=utf-8");
-
-        $ip = $_SERVER["REMOTE_ADDR"];
-        function GetIpLookup($ip){
-            // 根据ip地址获取省份，城市
-            $res = @file_get_contents('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js&ip=' . $ip);
-            if(empty($res)){ return false; }
-            $jsonMatches = array();
-            preg_match('#\{.+?\}#', $res, $jsonMatches);
-            if(!isset($jsonMatches[0])){ return false; }
-            $json = json_decode($jsonMatches[0], true);
-            if(isset($json['ret']) && $json['ret'] == 1){
-                $json['ip'] = $ip;
-                unset($json['ret']);
-            }else{
-                return false;
-            }
-            return $json;
-        }
-        $ipInfos = GetIpLookup($ip);
-
-        $city = $ipInfos["city"];
-        $province = $ipInfos['province'];
-
-
-        $areaInfo = M('area');
-
-        $condition['area'] = $city;
-        $condition['area'] = $province;
-        $condition['_logic'] = 'OR';
-        $areaCount = $areaInfo -> where($condition)->select();
-
-        $area = array();
-
-        if($areaCount){
-            if($city == "深圳"){
-                $area = array("$city","$city");
-            }else{
-                $area = array("$province","$province");
-            }
-        }else{
-            if(empty($ipInfos)){
-                $area = array("请选择","");
-            }else{
-                $area = array("未知区域,请选择","");
-            }
-
-
-        }
-
-        $this->assign("area",$area);
+//
+//        $ip = $_SERVER["REMOTE_ADDR"];
+//        function GetIpLookup($ip){
+//            // 根据ip地址获取省份，城市
+//            $res = @file_get_contents('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js&ip=' . $ip);
+//            if(empty($res)){ return false; }
+//            $jsonMatches = array();
+//            preg_match('#\{.+?\}#', $res, $jsonMatches);
+//            if(!isset($jsonMatches[0])){ return false; }
+//            $json = json_decode($jsonMatches[0], true);
+//            if(isset($json['ret']) && $json['ret'] == 1){
+//                $json['ip'] = $ip;
+//                unset($json['ret']);
+//            }else{
+//                return false;
+//            }
+//            return $json;
+//        }
+//        $ipInfos = GetIpLookup($ip);
+//
+//        $city = $ipInfos["city"];
+//        $province = $ipInfos['province'];
+//
+//
+//        $areaInfo = M('area');
+//
+//        $condition['area'] = $city;
+//        $condition['area'] = $province;
+//        $condition['_logic'] = 'OR';
+//        $areaCount = $areaInfo -> where($condition)->select();
+//
+//        $area = array();
+//
+//        if($areaCount){
+//            if($city == "深圳"){
+//                $area = array("$city","$city");
+//            }else{
+//                $area = array("$province","$province");
+//            }
+//        }else{
+//            if(empty($ipInfos)){
+//                $area = array("请选择","");
+//            }else{
+//                $area = array("未知区域,请选择","");
+//            }
+//
+//
+//        }
+//
+//        $this->assign("area",$area);
 
         $this->display();
     }

@@ -86,9 +86,9 @@
             <?php if(is_array($bankInfo)): foreach($bankInfo as $key=>$vo): ?><tr>
                     <td><?php echo ($vo["coin_id"]); ?></td>
                     <td><?php echo ($vo["id"]); ?></td>
-                    <td><input name="xxx" bank_id="<?php echo ($vo["id"]); ?>" type="text" value="<?php echo ($vo["name"]); ?>"/></td>
-                    <td><?php echo ($vo["apply_url"]); ?></td>
-                    <td><?php echo ($vo["query_url"]); ?></td>
+                    <td><input name="modify_bank_name" bank_id="<?php echo ($vo["id"]); ?>" type="text" value="<?php echo ($vo["name"]); ?>" style="width:100%;border: none"/></td>
+                    <td><input name="modify_apply_url" bank_id="<?php echo ($vo["id"]); ?>" type="text" value="<?php echo ($vo["apply_url"]); ?>" style="width:100%;border: none"/></td>
+                    <td><input name="modify_query_url" bank_id="<?php echo ($vo["id"]); ?>" type="text" value="<?php echo ($vo["query_url"]); ?>" style="width:100%;border: none"/></td>
                 </tr><?php endforeach; endif; ?>
 
             </tbody>
@@ -96,19 +96,41 @@
     </div>
 
     <script>
-
         $(document).ready(function(){
-            $("input[name=xxx]").blur(function(){
+            $("input[name=modify_bank_name]").blur(function(){
                 var bank_name = $(this).val();
                 var bank_id =$(this).attr("bank_id");
-                $.get('/index.php/Index/modify',{bank_name:bank_name,bank_id:bank_id},function(data){
-                    if(data.status){
-                        alert(data.info);
+                $.get('/index.php/Index/modify',{bank_name:bank_name,bank_id:bank_id},function(result1){
+                    if(result1.success){
                     }else{
-                        alert(data.info);
+                        alert("修改失败");
                     }
                 }
               ,'json')
+            });
+
+            $("input[name=modify_apply_url]").blur(function(){
+                var apply_url = $(this).val();
+                var bank_id =$(this).attr("bank_id");
+                $.get('/index.php/Index/modify',{apply_url:apply_url,bank_id:bank_id},function(result1){
+                            if(result1.success){
+                            }else{
+                                alert(result1.data);
+                            }
+                        }
+                        ,'json')
+            });
+
+            $("input[name=modify_query_url]").blur(function(){
+                var query_url = $(this).val();
+                var bank_id =$(this).attr("bank_id");
+                $.get('/index.php/Index/modify',{query_url:query_url,bank_id:bank_id},function(result1){
+                            if(result1.success){
+                            }else{
+                                alert(result1.data);
+                            }
+                        }
+                        ,'json')
             })
         })
 
@@ -123,14 +145,31 @@
                 <th colspan="8">地区</th>
             </tr>
 
-            <?php $__FOR_START_29188__=1;$__FOR_END_29188__=$count+1;for($i=$__FOR_START_29188__;$i < $__FOR_END_29188__;$i+=1){ ?><tr>
+            <?php $__FOR_START_599__=1;$__FOR_END_599__=$count+1;for($i=$__FOR_START_599__;$i < $__FOR_END_599__;$i+=1){ ?><tr>
                     <td><?php echo ($i); ?></td>
-                    <?php if(is_array($areaInfo[$i])): foreach($areaInfo[$i] as $key=>$vo): ?><td><?php echo ($vo["area"]); ?></td><?php endforeach; endif; ?>
+                    <?php if(is_array($areaInfo[$i])): foreach($areaInfo[$i] as $key=>$vo): ?><td><input name="modify_area" bank_id="<?php echo ($vo["bank_id"]); ?>" type="text" value="<?php echo ($vo["area"]); ?>" style="width:80px;border: none"/></td><?php endforeach; endif; ?>
                 </tr><?php } ?>
-
         </table>
     </div>
 </div>
+
+<script>
+    $("input[name=modify_area]").blur(function(){
+        var area = $(this).val();
+        var bank_id =$(this).attr("bank_id");
+        var order =$(this).parent().index();
+        console.log(order);
+
+        $.get('/index.php/Index/modify_area',{area:area,bank_id:bank_id,order:order},function(result1){
+                    if(result1.success){
+                    }else{
+                        alert(result1.data);
+                    }
+                }
+                ,'json')
+    })
+</script>
+
 
 
 <div>
