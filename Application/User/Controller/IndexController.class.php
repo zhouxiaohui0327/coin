@@ -25,7 +25,7 @@ class IndexController extends Controller {
          */
 
         $CoinModel =M('coin');
-        $coinInfo = $CoinModel -> select();
+        $coinInfo = $CoinModel ->order('id asc')-> select();
 
         $this->assign('coinInfo',$coinInfo);
 
@@ -34,9 +34,15 @@ class IndexController extends Controller {
          */
 
         $BankModel =M('bank');
-        $bankInfo = $BankModel -> select();
+        $bankInfo = $BankModel ->order('id asc')-> select();
 
         $this->assign('bankInfo',$bankInfo);
+
+
+
+
+
+
 
         /**
          * 循环出area表数据
@@ -45,11 +51,17 @@ class IndexController extends Controller {
         $count = count($bankInfo);
 
 
+
+        for($i=0;$i<$count;$i++){
+            $bank_ids[] = $bankInfo[$i]['id'];
+        }
+
         $areaModel =M('area');
 
-        for($i=1;$i<count($bankInfo)+1;$i++){
-             $areaInfo[$i] = $areaModel ->where("bank_id=$i")-> select();
+        for($x=0;$x<$count;$x++){
+             $areaInfo[] = $areaModel ->where("bank_id=$bank_ids[$x]")->order('id asc')-> select();
         }
+
 
         $this -> assign('areaInfo',$areaInfo);
         $this -> assign('count',$count);
@@ -147,12 +159,16 @@ class IndexController extends Controller {
 
         $Area = M('area');
 
-        $area_names_num =explode("；",$area_names);
-        $count =count($area_names_num);
+
+        for($i=0;$i<$count1;$i++){
+            $area_names_num =explode("；",$area_names);
+            $count[] =count(explode("，",$area_names_num[$i]));
+        }
+
 
         for($x=0;$x<$count1;$x++){
             $one = explode("，",$area_names_num[$x]);
-            for($i=0;$i<$count;$i++){
+            for($i=0;$i<$count[$x];$i++){
                 $data3['bank_id'] =$BankId[$x];
                 $data3['area']=$one[$i];
                 $AreaResult=$Area->add($data3);
@@ -222,14 +238,17 @@ class IndexController extends Controller {
 
         $Area = M('area');
         $map['bank_id'] =$bank_id;
-        $Area_name =$Area ->where($map)->select();
+        $Area_name =$Area ->where($map)->order('id asc')->select();
+
+
 
         $area1 = $Area_name[$order-1]['area'];
 
 
+
         $map1['name'] = $area1;
         $map1['bank_id'] =$bank_id;
-        $Area_id =$Area ->where($map1)->select();
+        $Area_id =$Area ->where($map1)->order('id asc')->select();
 
         $id = $Area_id[$order-1]['id'];
 
@@ -312,6 +331,48 @@ class IndexController extends Controller {
 
 
 
+    public function delete(){
+        header("Content-type:text/html;charset=utf8");
+
+        $id =I('get.id');
+
+        $map1['id'] =$id;
+        $map2['coin_id'] = $id;
+        $result = M('bank')->where($map2)->select();
+
+        $count= count($result);
+        for($i=0;$i<$count;$i++){
+            $num[]=$result[$i]['id'];
+        }
+
+        for($i=0;$i<$count;$i++){
+            $map3['bank_id']=$num[$i];
+            $result3 = M('area')->where($map3)->delete();
+        }
+
+        $result1=M('coin')->where($map1)->delete();
+        $result2=M('bank')->where($map2)->delete();
+
+        if($result1&&$result2&&$result3){
+            $result_delete=array();
+            $result_delete['success']=true;
+            $result_delete['data']='删除成功';
+
+            echo json_encode($result_delete);
+            die();
+        }else{
+            $result4=array();
+            $result4['success']=false;
+            $result4['data']='删除失败';
+
+            echo json_encode($result4);
+            die();
+        }
+
+
+
+
+    }
 
 
 

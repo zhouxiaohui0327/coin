@@ -40,12 +40,44 @@
                     <td><input name="modify_exchange_end" coin_id="<?php echo ($vo["id"]); ?>" type="date" value="<?php echo ($vo["exchange_end"]); ?>" style="width:100%;border: none"/></td>
                     <td><input name="modify_notice_url" coin_id="<?php echo ($vo["id"]); ?>" type="text" value="<?php echo ($vo["notice_url"]); ?>" style="width:100%;border: none"/></td>
                     <td>
-                        <a class="btn btn-danger btn-sm" style="padding:0 10px" href="">删除</a>
+                        <a class="btn btn-danger btn-sm deleteBtn" coin_name="<?php echo ($vo["name"]); ?>" coin_id="<?php echo ($vo["id"]); ?>" style="padding:0 10px" href="">删除</a>
                     </td>
                 </tr><?php endforeach; endif; ?>
             </tbody>
         </table>
     </div>
+
+    <script>
+        $(".deleteBtn").click(function(){
+            var coin_name = $(this).attr("coin_name");
+            if(confirm('将会删除和'+coin_name+"相关的所有数据，确定要删除吗？")){
+
+                var id = $(this).attr("coin_id");
+
+                $.get('/index.php/Index/delete',{id:id},function(result4){
+                            if(result4.success){
+                                alert(result4.data);
+                            }else{
+                                alert(result4.data);
+                            }
+                        }
+                        ,'json')
+
+            }
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
     <script>
         $("input[name=modify_coin_name]").blur(function(){
             var name = $(this).val();
@@ -190,10 +222,11 @@
                 <th colspan="8">地区</th>
             </tr>
 
-            <?php $__FOR_START_18218__=1;$__FOR_END_18218__=$count+1;for($i=$__FOR_START_18218__;$i < $__FOR_END_18218__;$i+=1){ ?><tr>
-                    <td><?php echo ($i); ?></td>
+            <?php $__FOR_START_13427__=0;$__FOR_END_13427__=$count;for($i=$__FOR_START_13427__;$i < $__FOR_END_13427__;$i+=1){ ?><tr>
+                    <td><?php echo ($areaInfo[$i][0]['bank_id']); ?></td>
                     <?php if(is_array($areaInfo[$i])): foreach($areaInfo[$i] as $key=>$vo): ?><td><input name="modify_area" bank_id="<?php echo ($vo["bank_id"]); ?>" type="text" value="<?php echo ($vo["area"]); ?>" style="width:80px;border: none"/></td><?php endforeach; endif; ?>
                 </tr><?php } ?>
+
         </table>
     </div>
 </div>
@@ -204,6 +237,7 @@
         var bank_id =$(this).attr("bank_id");
         var order =$(this).parent().index();
 
+        console.log(order);
         $.get('/index.php/Index/modify_area',{area:area,bank_id:bank_id,order:order},function(result1){
                     if(result1.success){
                     }else{
