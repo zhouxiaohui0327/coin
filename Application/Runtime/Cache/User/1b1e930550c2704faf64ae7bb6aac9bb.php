@@ -68,16 +68,6 @@
     </script>
 
 
-
-
-
-
-
-
-
-
-
-
     <script>
         $("input[name=modify_coin_name]").blur(function(){
             var name = $(this).val();
@@ -222,7 +212,7 @@
                 <th colspan="8">地区</th>
             </tr>
 
-            <?php $__FOR_START_13427__=0;$__FOR_END_13427__=$count;for($i=$__FOR_START_13427__;$i < $__FOR_END_13427__;$i+=1){ ?><tr>
+            <?php $__FOR_START_20988__=0;$__FOR_END_20988__=$count;for($i=$__FOR_START_20988__;$i < $__FOR_END_20988__;$i+=1){ ?><tr>
                     <td><?php echo ($areaInfo[$i][0]['bank_id']); ?></td>
                     <?php if(is_array($areaInfo[$i])): foreach($areaInfo[$i] as $key=>$vo): ?><td><input name="modify_area" bank_id="<?php echo ($vo["bank_id"]); ?>" type="text" value="<?php echo ($vo["area"]); ?>" style="width:80px;border: none"/></td><?php endforeach; endif; ?>
                 </tr><?php } ?>
