@@ -38,12 +38,6 @@ class IndexController extends Controller {
 
         $this->assign('bankInfo',$bankInfo);
 
-
-
-
-
-
-
         /**
          * 循环出area表数据
          */
@@ -205,7 +199,6 @@ class IndexController extends Controller {
         }
 
 
-//        $data['name'] = $bank_name;
         $map['id'] = $bank_id;
 
         $bank_name_select =$Bank->where($map)->find();
