@@ -7,6 +7,9 @@
     <load href='/Public/js/jquery-2.1.4.js' />
     <load href='/plugins/ueditor/ueditor/ueditor.config.js' />
     <load href='/plugins/ueditor/ueditor/ueditor.all.js' />
+    <!--<load href='/plugins/ueditor/ueditor/ueditor.all.min.js' />-->
+    <!--<load href='/plugins/ueditor/ueditor/ueditor.parse.js' />-->
+    <!--<load href='/plugins/ueditor/ueditor/ueditor.parse.min.js' />-->
     <load href='/Public/js/myJs.js' />
     <load href='/Public/css/base.css' />
 </head>
@@ -370,7 +373,6 @@
                     $.get('/index.php/Index/news_modify?id='+ id, function(result){
                         var news = $.parseJSON(result);
                         $('input[name=tab]').val(news.tab);
-                        $('.view').html(news.content);
                     })
                 })
             </script>
