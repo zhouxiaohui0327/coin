@@ -56,10 +56,18 @@ class IndexController extends Controller {
              $areaInfo[] = $areaModel ->where("bank_id=$bank_ids[$x]")->order('id asc')-> select();
         }
 
+        $type = I('get.type');
 
         $this -> assign('areaInfo',$areaInfo);
         $this -> assign('count',$count);
+        $this -> assign('type',$type);
 
+        $count = M('news')->count();
+        $Page  = new \Think\Page($count,5);
+        $show  = $Page->show();
+        $list = M('news') ->order('id')->order("id desc")->limit($Page->firstRow,$Page->listRows)->select();
+        $this->assign('list',$list);// 赋值数据集
+        $this->assign('page',$show);// 赋值分页输出
         $this->display();
 
     }
@@ -93,7 +101,7 @@ class IndexController extends Controller {
         {
             if($userModel['password'] == md5($password))
             {
-                header("location:/index.php/Index/admin.html");
+                header("location:/index.php/Index/admin");
                 setcookie("user","$account",time()+3600);
             }
             else
@@ -361,16 +369,81 @@ class IndexController extends Controller {
             echo json_encode($result4);
             die();
         }
-
-
-
-
     }
 
+    public function publish(){
+        header("Content-type:text/html;charset=utf8");
+        $tab = I('get.tab');
+        $content = I('get.content');
+        if(empty($tab)){
+            $result=array();
+            $result['status']=true;
+            $result['data']='标记不能为空';
+
+            echo json_encode($result);
+            die();
+        }
+
+        if(empty($content)){
+            $result=array();
+            $result['status']=true;
+            $result['data']='内容不能为空';
+
+            echo json_encode($result);
+            die();
+        }
 
 
 
+        $data['content'] = $content;
+        $data['tab'] = $tab;
+        $data['create_time'] = date("Y-m-d H:i:s");
+        $News = M('news')->add($data);
 
+        if($News){
+            $result=array();
+            $result['success']=true;
+            $result['data']='发布成功';
 
+            echo json_encode($result);
+            die();
+        }else{
+            $result=array();
+            $result['success']=false;
+            $result['data']='发布失败';
 
+            echo json_encode($result);
+            die();
+        }
+    }
+
+    public function news_delete(){
+
+        $id = I('get.id');
+        $news = M('news');
+        $map['id'] = $id;
+        $News = $news->where($map)->delete();
+        if($News){
+            $result=array();
+            $result['success'] = true;
+            $result['data'] = '删除成功';
+            echo json_encode($result);die();
+        }else{
+            $result = array();
+            $result['success'] = false;
+            $result['data'] = '删除失败';
+            echo json_encode($result);die();
+        }
+    }
+    public function news_modify(){
+        $id = I('get.id');
+        $news = M('news');
+        $map['id'] = $id;
+        $News = $news->where($map)->find();
+//        $result_arr = mysql_fetch_assoc($News);
+
+        echo json_encode($News);
+
+        die();
+    }
 }

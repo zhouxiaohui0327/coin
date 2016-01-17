@@ -5,181 +5,150 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <title></title>
     <script type="text/javascript" src="/Public/js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="/plugins/ueditor/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="/plugins/ueditor/ueditor/ueditor.all.js"></script>
     <script type="text/javascript" src="/Public/js/myJs.js"></script>
     <link rel="stylesheet" type="text/css" href="/Public/css/base.css" />
 </head>
 <body>
 <header class="container-fuld clearfix">
-    <a  href="javascript:loginOut()" class="loginOutBtn pull-right btn btn-danger btn-sm" style="border-radius: 0px">退出</a>
+    <?php if($type==0): ?><a href="/index.php/Index/admin?type=0"  class="btn btn-sm pull-left nav-a nav-active">核心数据</a>
+        <a href="/index.php/Index/admin?type=1"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">静态页面管理</a>
+        <a href="/index.php/Index/admin?type=2"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">用户管理</a>
+    <?php elseif($type==1): ?>
+        <a href="/index.php/Index/admin?type=0"  class="btn btn-sm pull-left nav-a">核心数据</a>
+        <a href="/index.php/Index/admin?type=1"  class="btn btn-sm pull-left nav-a nav-active" style="margin-left: -1px">静态页面管理</a>
+        <a href="/index.php/Index/admin?type=2"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">用户管理</a>
+    <?php elseif($type==2): ?>
+        <a href="/index.php/Index/admin?type=0"  class="btn btn-sm pull-left nav-a">核心数据</a>
+        <a href="/index.php/Index/admin?type=1"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">静态页面管理</a>
+        <a href="/index.php/Index/admin?type=2"  class="btn btn-sm pull-left nav-a nav-active" style="margin-left: -1px">用户管理</a>
+     <?php else: ?>
+        <a href="/index.php/Index/admin?type=0"  class="btn btn-sm pull-left nav-a">核心数据</a>
+        <a href="/index.php/Index/admin?type=1"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">静态页面管理</a>
+        <a href="/index.php/Index/admin?type=2"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">用户管理</a><?php endif; ?>
+
+    <a  href="javascript:loginOut()" class="loginOutBtn pull-right btn btn-sm" style="border-left: 1px solid grey">退出</a>
     <p class="welcome pull-right">当前用户：<span><?php echo ($nickname); ?></span></p>
 </header>
 
 
-<div class="container" style="margin-top: 20px">
-    <div class="coin_wrap">
-        <table class="table table-bordered table-striped table-hover">
-            <thead>
-            <tr>
-                <th>id</th>
-                <th>纪念币名称</th>
-                <th>预约开始时间</th>
-                <th>预约结束时间</th>
-                <th>兑换开始时间</th>
-                <th>兑换结束时间</th>
-                <th>央行公告链接</th>
-                <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php if(is_array($coinInfo)): foreach($coinInfo as $key=>$vo): ?><tr>
-                    <td><?php echo ($vo["id"]); ?></td>
-                    <td><input name="modify_coin_name" coin_id="<?php echo ($vo["id"]); ?>" type="text" value="<?php echo ($vo["name"]); ?>" style="width:100%;border: none"/></td>
-                    <td><input name="modify_apply_start" coin_id="<?php echo ($vo["id"]); ?>" type="date" value="<?php echo ($vo["apply_start"]); ?>" style="width:100%;border: none"/></td>
-                    <td><input name="modify_apply_end" coin_id="<?php echo ($vo["id"]); ?>" type="date" value="<?php echo ($vo["apply_end"]); ?>" style="width:100%;border: none"/></td>
-                    <td><input name="modify_exchange_start" coin_id="<?php echo ($vo["id"]); ?>" type="date" value="<?php echo ($vo["exchange_start"]); ?>" style="width:100%;border: none"/></td>
-                    <td><input name="modify_exchange_end" coin_id="<?php echo ($vo["id"]); ?>" type="date" value="<?php echo ($vo["exchange_end"]); ?>" style="width:100%;border: none"/></td>
-                    <td><input name="modify_notice_url" coin_id="<?php echo ($vo["id"]); ?>" type="text" value="<?php echo ($vo["notice_url"]); ?>" style="width:100%;border: none"/></td>
-                    <td>
-                        <a class="btn btn-danger btn-sm deleteBtn" coin_name="<?php echo ($vo["name"]); ?>" coin_id="<?php echo ($vo["id"]); ?>" style="padding:0 10px" href="">删除</a>
-                    </td>
-                </tr><?php endforeach; endif; ?>
-            </tbody>
-        </table>
-    </div>
 
-    <script>
-        $(".deleteBtn").click(function(){
-            var coin_name = $(this).attr("coin_name");
-            if(confirm('将会删除和'+coin_name+"相关的所有数据，确定要删除吗？")){
+<div class="all-wrap container" style="margin-top: 20px">
 
-                var id = $(this).attr("coin_id");
+    <?php if($type==0): ?><div class="coin-wrap">
+        <div class="coin_wrap">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>纪念币名称</th>
+                    <th>预约开始时间</th>
+                    <th>预约结束时间</th>
+                    <th>兑换开始时间</th>
+                    <th>兑换结束时间</th>
+                    <th>央行公告链接</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php if(is_array($coinInfo)): foreach($coinInfo as $key=>$vo): ?><tr>
+                        <td><?php echo ($vo["id"]); ?></td>
+                        <td><input name="modify_coin_name" coin_id="<?php echo ($vo["id"]); ?>" type="text" value="<?php echo ($vo["name"]); ?>" style="width:100%;border: none"/></td>
+                        <td><input name="modify_apply_start" coin_id="<?php echo ($vo["id"]); ?>" type="date" value="<?php echo ($vo["apply_start"]); ?>" style="width:100%;border: none"/></td>
+                        <td><input name="modify_apply_end" coin_id="<?php echo ($vo["id"]); ?>" type="date" value="<?php echo ($vo["apply_end"]); ?>" style="width:100%;border: none"/></td>
+                        <td><input name="modify_exchange_start" coin_id="<?php echo ($vo["id"]); ?>" type="date" value="<?php echo ($vo["exchange_start"]); ?>" style="width:100%;border: none"/></td>
+                        <td><input name="modify_exchange_end" coin_id="<?php echo ($vo["id"]); ?>" type="date" value="<?php echo ($vo["exchange_end"]); ?>" style="width:100%;border: none"/></td>
+                        <td><input name="modify_notice_url" coin_id="<?php echo ($vo["id"]); ?>" type="text" value="<?php echo ($vo["notice_url"]); ?>" style="width:100%;border: none"/></td>
+                        <td>
+                            <a class="btn btn-danger btn-sm deleteBtn" coin_name="<?php echo ($vo["name"]); ?>" coin_id="<?php echo ($vo["id"]); ?>" style="padding:0 10px" href="">删除</a>
+                        </td>
+                    </tr><?php endforeach; endif; ?>
+                </tbody>
+            </table>
+        </div>
 
-                $.get('/index.php/Index/delete',{id:id},function(result4){
-                            if(result4.success){
-                                alert(result4.data);
+        <script>
+            $(".deleteBtn").click(function(){
+                var coin_name = $(this).attr("coin_name");
+                if(confirm('将会删除和'+coin_name+"相关的所有数据，确定要删除吗？")){
+
+                    var id = $(this).attr("coin_id");
+
+                    $.get('/index.php/Index/delete',{id:id},function(result4){
+                                if(result4.success){
+                                    alert(result4.data);
+                                }else{
+                                    alert(result4.data);
+                                }
+                            }
+                            ,'json')
+
+                }
+            })
+        </script>
+
+
+        <script>
+            $("input[name=modify_coin_name]").blur(function(){
+                var name = $(this).val();
+                var id =$(this).attr("coin_id");
+                $.get('/index.php/Index/modify_coin',{name:name,id:id},function(result1){
+                            if(result1.success){
                             }else{
-                                alert(result4.data);
+                                alert(result1.data);
                             }
                         }
                         ,'json')
-
-            }
-        })
-    </script>
-
-
-    <script>
-        $("input[name=modify_coin_name]").blur(function(){
-            var name = $(this).val();
-            var id =$(this).attr("coin_id");
-            $.get('/index.php/Index/modify_coin',{name:name,id:id},function(result1){
-                        if(result1.success){
-                        }else{
-                            alert(result1.data);
-                        }
-                    }
-                    ,'json')
-        });
-        $("input[name=modify_apply_start]").blur(function(){
-            var apply_start = $(this).val();
-            var id =$(this).attr("coin_id");
-            $.get('/index.php/Index/modify_coin',{apply_start:apply_start,id:id},function(result1){
-                        if(result1.success){
-                        }else{
-                            alert(result1.data);
-                        }
-                    }
-                    ,'json')
-        });
-        $("input[name=modify_apply_end]").blur(function(){
-            var apply_end = $(this).val();
-            var id =$(this).attr("coin_id");
-            $.get('/index.php/Index/modify_coin',{apply_end:apply_end,id:id},function(result1){
-                        if(result1.success){
-                        }else{
-                            alert(result1.data);
-                        }
-                    }
-                    ,'json')
-        });
-        $("input[name=modify_exchange_start]").blur(function(){
-            var exchange_start = $(this).val();
-            var id =$(this).attr("coin_id");
-            $.get('/index.php/Index/modify_coin',{exchange_start:exchange_start,id:id},function(result1){
-                        if(result1.success){
-                        }else{
-                            alert(result1.data);
-                        }
-                    }
-                    ,'json')
-        });
-        $("input[name=modify_exchange_end]").blur(function(){
-            var exchange_end = $(this).val();
-            var id =$(this).attr("coin_id");
-            $.get('/index.php/Index/modify_coin',{exchange_end:exchange_end,id:id},function(result1){
-                        if(result1.success){
-                        }else{
-                            alert(result1.data);
-                        }
-                    }
-                    ,'json')
-        });
-        $("input[name=modify_notice_url]").blur(function(){
-            var notice_url = $(this).val();
-            var id =$(this).attr("coin_id");
-            $.get('/index.php/Index/modify_coin',{notice_url:notice_url,id:id},function(result1){
-                        if(result1.success){
-                        }else{
-                            alert(result1.data);
-                        }
-                    }
-                    ,'json')
-        });
-
-    </script>
-
-    <div class="bank_wrap">
-        <table class="table table-bordered table-striped table-hover">
-            <thead>
-            <tr>
-                <th>id</th>
-                <th>银行编号</th>
-                <th>兑换银行</th>
-                <th>预约链接</th>
-                <th>查询链接</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php if(is_array($bankInfo)): foreach($bankInfo as $key=>$vo): ?><tr>
-                    <td><?php echo ($vo["coin_id"]); ?></td>
-                    <td><?php echo ($vo["id"]); ?></td>
-                    <td><input name="modify_bank_name" bank_id="<?php echo ($vo["id"]); ?>" type="text" value="<?php echo ($vo["name"]); ?>" style="width:100%;border: none"/></td>
-                    <td><input name="modify_apply_url" bank_id="<?php echo ($vo["id"]); ?>" type="text" value="<?php echo ($vo["apply_url"]); ?>" style="width:100%;border: none"/></td>
-                    <td><input name="modify_query_url" bank_id="<?php echo ($vo["id"]); ?>" type="text" value="<?php echo ($vo["query_url"]); ?>" style="width:100%;border: none"/></td>
-                </tr><?php endforeach; endif; ?>
-
-            </tbody>
-        </table>
-    </div>
-
-    <script>
-        $(document).ready(function(){
-            $("input[name=modify_bank_name]").blur(function(){
-                var bank_name = $(this).val();
-                var bank_id =$(this).attr("bank_id");
-                $.get('/index.php/Index/modify',{bank_name:bank_name,bank_id:bank_id},function(result1){
-                    if(result1.success){
-                    }else{
-                        alert("修改失败");
-                    }
-                }
-              ,'json')
             });
-
-            $("input[name=modify_apply_url]").blur(function(){
-                var apply_url = $(this).val();
-                var bank_id =$(this).attr("bank_id");
-                $.get('/index.php/Index/modify',{apply_url:apply_url,bank_id:bank_id},function(result1){
+            $("input[name=modify_apply_start]").blur(function(){
+                var apply_start = $(this).val();
+                var id =$(this).attr("coin_id");
+                $.get('/index.php/Index/modify_coin',{apply_start:apply_start,id:id},function(result1){
+                            if(result1.success){
+                            }else{
+                                alert(result1.data);
+                            }
+                        }
+                        ,'json')
+            });
+            $("input[name=modify_apply_end]").blur(function(){
+                var apply_end = $(this).val();
+                var id =$(this).attr("coin_id");
+                $.get('/index.php/Index/modify_coin',{apply_end:apply_end,id:id},function(result1){
+                            if(result1.success){
+                            }else{
+                                alert(result1.data);
+                            }
+                        }
+                        ,'json')
+            });
+            $("input[name=modify_exchange_start]").blur(function(){
+                var exchange_start = $(this).val();
+                var id =$(this).attr("coin_id");
+                $.get('/index.php/Index/modify_coin',{exchange_start:exchange_start,id:id},function(result1){
+                            if(result1.success){
+                            }else{
+                                alert(result1.data);
+                            }
+                        }
+                        ,'json')
+            });
+            $("input[name=modify_exchange_end]").blur(function(){
+                var exchange_end = $(this).val();
+                var id =$(this).attr("coin_id");
+                $.get('/index.php/Index/modify_coin',{exchange_end:exchange_end,id:id},function(result1){
+                            if(result1.success){
+                            }else{
+                                alert(result1.data);
+                            }
+                        }
+                        ,'json')
+            });
+            $("input[name=modify_notice_url]").blur(function(){
+                var notice_url = $(this).val();
+                var id =$(this).attr("coin_id");
+                $.get('/index.php/Index/modify_coin',{notice_url:notice_url,id:id},function(result1){
                             if(result1.success){
                             }else{
                                 alert(result1.data);
@@ -188,10 +157,96 @@
                         ,'json')
             });
 
-            $("input[name=modify_query_url]").blur(function(){
-                var query_url = $(this).val();
+        </script>
+
+        <div class="bank_wrap">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th style="width: 10%;">银行编号</th>
+                    <th style="width: 15%;">兑换银行</th>
+                    <th>预约链接</th>
+                    <th>查询链接</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php if(is_array($bankInfo)): foreach($bankInfo as $key=>$vo): ?><tr>
+                        <td><?php echo ($vo["coin_id"]); ?></td>
+                        <td><?php echo ($vo["id"]); ?></td>
+                        <td><input name="modify_bank_name" bank_id="<?php echo ($vo["id"]); ?>" type="text" value="<?php echo ($vo["name"]); ?>" style="width:100%;border: none"/></td>
+                        <td><input name="modify_apply_url" bank_id="<?php echo ($vo["id"]); ?>" type="text" value="<?php echo ($vo["apply_url"]); ?>" style="width:100%;border: none"/></td>
+                        <td><input name="modify_query_url" bank_id="<?php echo ($vo["id"]); ?>" type="text" value="<?php echo ($vo["query_url"]); ?>" style="width:100%;border: none"/></td>
+                    </tr><?php endforeach; endif; ?>
+
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            $(document).ready(function(){
+                $("input[name=modify_bank_name]").blur(function(){
+                    var bank_name = $(this).val();
+                    var bank_id =$(this).attr("bank_id");
+                    $.get('/index.php/Index/modify',{bank_name:bank_name,bank_id:bank_id},function(result1){
+                                if(result1.success){
+                                }else{
+                                    alert("修改失败");
+                                }
+                            }
+                            ,'json')
+                });
+
+                $("input[name=modify_apply_url]").blur(function(){
+                    var apply_url = $(this).val();
+                    var bank_id =$(this).attr("bank_id");
+                    $.get('/index.php/Index/modify',{apply_url:apply_url,bank_id:bank_id},function(result1){
+                                if(result1.success){
+                                }else{
+                                    alert(result1.data);
+                                }
+                            }
+                            ,'json')
+                });
+
+                $("input[name=modify_query_url]").blur(function(){
+                    var query_url = $(this).val();
+                    var bank_id =$(this).attr("bank_id");
+                    $.get('/index.php/Index/modify',{query_url:query_url,bank_id:bank_id},function(result1){
+                                if(result1.success){
+                                }else{
+                                    alert(result1.data);
+                                }
+                            }
+                            ,'json')
+                })
+            })
+
+        </script>
+
+
+        <div class="area_wrap">
+
+            <table class="table table-bordered table-striped table-hover">
+                <tr>
+                    <th>银行编号</th>
+                    <th colspan="8">地区</th>
+                </tr>
+
+                <?php $__FOR_START_32323__=0;$__FOR_END_32323__=$count;for($i=$__FOR_START_32323__;$i < $__FOR_END_32323__;$i+=1){ ?><tr>
+                        <td><?php echo ($areaInfo[$i][0]['bank_id']); ?></td>
+                        <?php if(is_array($areaInfo[$i])): foreach($areaInfo[$i] as $key=>$vo): ?><td><input name="modify_area" bank_id="<?php echo ($vo["bank_id"]); ?>" type="text" value="<?php echo ($vo["area"]); ?>" style="width:80px;border: none"/></td><?php endforeach; endif; ?>
+                    </tr><?php } ?>
+
+            </table>
+        </div>
+        <script>
+            $("input[name=modify_area]").blur(function(){
+                var area = $(this).val();
                 var bank_id =$(this).attr("bank_id");
-                $.get('/index.php/Index/modify',{query_url:query_url,bank_id:bank_id},function(result1){
+                var order =$(this).parent().index();
+
+                $.get('/index.php/Index/modify_area',{area:area,bank_id:bank_id,order:order},function(result1){
                             if(result1.success){
                             }else{
                                 alert(result1.data);
@@ -199,119 +254,192 @@
                         }
                         ,'json')
             })
-        })
-
-    </script>
-
-
-    <div class="area_wrap">
-
-        <table class="table table-bordered table-striped table-hover">
-            <tr>
-                <th>银行编号</th>
-                <th colspan="8">地区</th>
-            </tr>
-
-            <?php $__FOR_START_20988__=0;$__FOR_END_20988__=$count;for($i=$__FOR_START_20988__;$i < $__FOR_END_20988__;$i+=1){ ?><tr>
-                    <td><?php echo ($areaInfo[$i][0]['bank_id']); ?></td>
-                    <?php if(is_array($areaInfo[$i])): foreach($areaInfo[$i] as $key=>$vo): ?><td><input name="modify_area" bank_id="<?php echo ($vo["bank_id"]); ?>" type="text" value="<?php echo ($vo["area"]); ?>" style="width:80px;border: none"/></td><?php endforeach; endif; ?>
-                </tr><?php } ?>
-
-        </table>
+        </script>
+        <div>
+            <form class="form-horizontal" action="/index.php/Index/addPost">
+                <div class="form-group" style="margin-right: 0">
+                    <label class="col-sm-2 control-label">纪念币名称</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" name="coin_name" placeholder="纪念币名称">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-right: 0">
+                    <label class="col-sm-2 control-label">预约开始时间</label>
+                    <div class="col-sm-2">
+                        <input type="date" class="form-control" name="apply_start" placeholder="预约开始时间">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-right: 0">
+                    <label class="col-sm-2 control-label">预约结束时间</label>
+                    <div class="col-sm-2">
+                        <input type="date" class="form-control" name="apply_end" placeholder="预约结束时间">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-right: 0">
+                    <label class="col-sm-2 control-label">兑换开始时间</label>
+                    <div class="col-sm-2">
+                        <input type="date" class="form-control" name="exchange_start" placeholder="兑换开始时间">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-right: 0">
+                    <label class="col-sm-2 control-label">兑换结束时间</label>
+                    <div class="col-sm-2">
+                        <input type="date" class="form-control" name="exchange_end" placeholder="兑换结束时间">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-right: 0">
+                    <label class="col-sm-2 control-label">央行公告链接</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" name="notice_url" placeholder="央行公告链接">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-right: 0">
+                    <label class="col-sm-2 control-label">兑换银行</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" name="bank_name" placeholder="多个银行用“，”隔开">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-right: 0">
+                    <label class="col-sm-2 control-label">预约链接</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="apply_url" placeholder="多个预约链接用“，”隔开">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-right: 0">
+                    <label class="col-sm-2 control-label">查询链接</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="query_url" placeholder="多个查询链接用“，”隔开">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-right: 0">
+                    <label class="col-sm-2 control-label">地区</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="area_names" placeholder="多个地区用“，”隔开 ， 多个银行用“；”隔开">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-right: 0">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" id="addBtn" class="btn btn-success">确认添加</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
+    <?php elseif($type==1): ?>
+    <div class="manage_wrap container">
+        <div>
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th style="width: 10%">id</th>
+                    <th style="width: 50%">标记</th>
+                    <th>最后修改时间</th>
+                    <th style="width:10%">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr lowId="<?php echo ($vo["id"]); ?>">
+                        <td><?php echo ($vo["id"]); ?></td>
+                        <td><?php echo ($vo["tab"]); ?></td>
+                        <td><?php echo ($vo["create_time"]); ?></td>
+                        <td>
+                            <a content_id="<?php echo ($vo["id"]); ?>" class="news_modify btn btn-default btn-sm" href="">修改</a>
+                            <a content_id="<?php echo ($vo["id"]); ?>" class="news_delete btn btn-danger btn-sm" href="">删除</a>
+                        </td>
+                    </tr><?php endforeach; endif; ?>
+                </tbody>
+            </table>
 
-<script>
-    $("input[name=modify_area]").blur(function(){
-        var area = $(this).val();
-        var bank_id =$(this).attr("bank_id");
-        var order =$(this).parent().index();
+            <script>
+                $(".news_modify").click(function(e){
+                    var id = $(this).attr('content_id');
+                    e.preventDefault();
+                    $.get('/index.php/Index/news_modify?id='+ id, function(result){
+                        var news = $.parseJSON(result);
+                        $('input[name=tab]').val(news.tab);
+                        $('.view').html(news.content);
+                    })
+                })
+            </script>
 
-        console.log(order);
-        $.get('/index.php/Index/modify_area',{area:area,bank_id:bank_id,order:order},function(result1){
-                    if(result1.success){
-                    }else{
-                        alert(result1.data);
+            <script>
+                $(".news_delete").click(function(e){
+                    if (confirm("确定要删除吗?")){
+                        var id = $(this).attr("content_id");
+                        e.preventDefault();
+                        $.ajax({
+                            url:'/index.php/Index/news_delete',
+                            type:'get',
+                            data:{id:id},
+                            dataType:'json',
+                            success:function(result){
+                                if(result.success){
+                                    window.self.location="/index.php/Index/admin?type=1";
+                                }else{
+                                    alert(result.data)
+                                }
+                            },
+                            error: function(error) {
+                                console.log(error);
+                            }
+                        });
+                        return false;
                     }
-                }
-                ,'json')
-    })
-</script>
+                })
+            </script>
+                <div class="nav text-center"><?php echo ($page); ?></div>
+        </div>
 
+        <div style="margin-top: 20px">
+            <form class="form-horizontal" action="" method="get">
+                <div class="form-group">
+                    <label class="sr-only col-sm-2 control-label">标记</label>
+                    <div class="col-sm-offset-2 col-sm-4">
+                        <input type="text" class="form-control" name="tab" placeholder="用来标记，不会显示在页面上">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-8">
+                        <textarea id="fullNameSuffix" name="content" style="height:300px;"></textarea>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-right: 0">
+                    <div class="col-sm-offset-9 col-sm-3">
+                        <button type="submit" id="publish" class="btn btn-default" style="width: 80px;">发布</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script type="text/javascript">
+            UE.getEditor('fullNameSuffix')
+        </script>
+    </div>
+        <script>
+            $('#publish').click(function(e){
+                var content = $('textarea[name=content]').val();
+                var tab = $('input[name=tab]').val();
+                e.preventDefault();
+                $.ajax({
+                    url:'/index.php/Index/publish',
+                    type:'get',
+                    data:{content:content,tab:tab},
+                    dataType:'json',
+                    success:function(result){
+                        if(result.success){
+                            window.self.location="/index.php/Index/admin?type=1";
+                        }else{
+                            alert(result.data);
+                        }
+                    }
+                })
+            })
+        </script>
 
+    <?php else: ?>
+    <div class="user-wrap">
 
-<div>
-    <form class="form-horizontal" action="/index.php/Index/addPost">
-        <div class="form-group" style="margin-right: 0">
-            <label class="col-sm-2 control-label">纪念币信息</label>
-            <div class="col-sm-2">
-                <input type="text" class="form-control" name="coin_name" placeholder="纪念币信息">
-            </div>
-        </div>
-        <div class="form-group" style="margin-right: 0">
-            <label class="col-sm-2 control-label">预约开始时间</label>
-            <div class="col-sm-2">
-                <input type="date" class="form-control" name="apply_start" placeholder="预约开始时间">
-            </div>
-        </div>
-        <div class="form-group" style="margin-right: 0">
-            <label class="col-sm-2 control-label">预约结束时间</label>
-            <div class="col-sm-2">
-                <input type="date" class="form-control" name="apply_end" placeholder="预约结束时间">
-            </div>
-        </div>
-        <div class="form-group" style="margin-right: 0">
-            <label class="col-sm-2 control-label">兑换开始时间</label>
-            <div class="col-sm-2">
-                <input type="date" class="form-control" name="exchange_start" placeholder="兑换开始时间">
-            </div>
-        </div>
-        <div class="form-group" style="margin-right: 0">
-            <label class="col-sm-2 control-label">兑换结束时间</label>
-            <div class="col-sm-2">
-                <input type="date" class="form-control" name="exchange_end" placeholder="兑换结束时间">
-            </div>
-        </div>
-        <div class="form-group" style="margin-right: 0">
-            <label class="col-sm-2 control-label">央行公告链接</label>
-            <div class="col-sm-5">
-                <input type="text" class="form-control" name="notice_url" placeholder="央行公告链接">
-            </div>
-        </div>
-        <div class="form-group" style="margin-right: 0">
-            <label class="col-sm-2 control-label">兑换银行</label>
-            <div class="col-sm-5">
-                <input type="text" class="form-control" name="bank_name" placeholder="多个银行用“，”隔开">
-            </div>
-        </div>
-        <div class="form-group" style="margin-right: 0">
-            <label class="col-sm-2 control-label">预约链接</label>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" name="apply_url" placeholder="多个预约链接用“，”隔开">
-            </div>
-        </div>
-        <div class="form-group" style="margin-right: 0">
-            <label class="col-sm-2 control-label">查询链接</label>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" name="query_url" placeholder="多个查询链接用“，”隔开">
-            </div>
-        </div>
-        <div class="form-group" style="margin-right: 0">
-            <label class="col-sm-2 control-label">地区</label>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" name="area_names" placeholder="多个地区用“，”隔开 ， 多个银行用“；”隔开">
-            </div>
-        </div>
-        <div class="form-group" style="margin-right: 0">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" id="addBtn" class="btn btn-success">确认添加</button>
-            </div>
-        </div>
-    </form>
+    </div><?php endif; ?>
 </div>
-
-
-
 
 </body>
 </html>
