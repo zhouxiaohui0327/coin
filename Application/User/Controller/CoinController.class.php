@@ -59,13 +59,18 @@ class CoinController extends Controller{
 
     public function news(){
         M('news');
-        $content = M('news')->order('id desc')->find();
+        $id = I('get.id');
+        $map['id'] = $id;
+        if(empty($id)){
+            $content = M('news')->order('id desc')->find();
+        }else{
+            $content = M('news')->where($map)->find();
+        }
+
         $content = stripcslashes((htmlspecialchars_decode($content['content'])));
         $this->assign('content',$content);
         $this->display();
     }
-
-
 
 
 }

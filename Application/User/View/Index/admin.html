@@ -5,12 +5,21 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <title></title>
     <load href='/Public/js/jquery-2.1.4.js' />
+
+    <script type="text/javascript">
+    window.UEDITOR_HOME_URL ="/plugins/ueditor/ueditor/";//指出ueditor的存放路径
+    window.onload=function(){
+    UE.getEditor('fullNameSuffix');//要传入一个ID才能显示编辑器，即textarea中的id
+    }
+    </script>
+
     <load href='/plugins/ueditor/ueditor/ueditor.config.js' />
     <load href='/plugins/ueditor/ueditor/ueditor.all.js' />
     <!--<load href='/plugins/ueditor/ueditor/ueditor.all.min.js' />-->
     <!--<load href='/plugins/ueditor/ueditor/ueditor.parse.js' />-->
     <!--<load href='/plugins/ueditor/ueditor/ueditor.parse.min.js' />-->
     <load href='/Public/js/myJs.js' />
+
     <load href='/Public/css/base.css' />
 </head>
 <body>
@@ -346,9 +355,9 @@
                 <thead>
                 <tr>
                     <th style="width: 10%">id</th>
-                    <th style="width: 50%">标记</th>
+                    <th style="width: 45%">标记</th>
                     <th>最后修改时间</th>
-                    <th style="width:10%">操作</th>
+                    <th style="width:15%">操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -358,24 +367,14 @@
                         <td>{$vo.tab}</td>
                         <td>{$vo.create_time}</td>
                         <td>
-                            <a content_id="{$vo.id}" class="news_modify btn btn-default btn-sm" href="">修改</a>
+                            <a content_id="{$vo.id}" class="news_modify btn btn-info btn-sm" href="">编辑</a>
                             <a content_id="{$vo.id}" class="news_delete btn btn-danger btn-sm" href="">删除</a>
+                            <a class="btn btn-default btn-sm" href="/index.php/Coin/news?id={$vo.id}">查看</a>
                         </td>
                     </tr>
                 </foreach>
                 </tbody>
             </table>
-
-            <script>
-                $(".news_modify").click(function(e){
-                    var id = $(this).attr('content_id');
-                    e.preventDefault();
-                    $.get('/index.php/Index/news_modify?id='+ id, function(result){
-                        var news = $.parseJSON(result);
-                        $('input[name=tab]').val(news.tab);
-                    })
-                })
-            </script>
 
             <script>
                 $(".news_delete").click(function(e){
@@ -407,6 +406,12 @@
 
         <div style="margin-top: 20px">
             <form class="form-horizontal" action="" method="get">
+                <div class="form-group" style="display: none">
+                    <label class="sr-only col-sm-2 control-label">id</label>
+                    <div class="col-sm-offset-2 col-sm-4">
+                        <input type="text" class="form-control" name="id" placeholder="id">
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="sr-only col-sm-2 control-label">标记</label>
                     <div class="col-sm-offset-2 col-sm-4">
@@ -430,14 +435,17 @@
         </script>
     </div>
         <script>
+            //点击发布，将数据存到数据库
             $('#publish').click(function(e){
                 var content = $('textarea[name=content]').val();
                 var tab = $('input[name=tab]').val();
+                var id =$('input[name=id]').val();
+
                 e.preventDefault();
                 $.ajax({
                     url:'/index.php/Index/publish',
                     type:'get',
-                    data:{content:content,tab:tab},
+                    data:{content:content,tab:tab,id:id},
                     dataType:'json',
                     success:function(result){
                         if(result.success){
@@ -449,13 +457,168 @@
                 })
             })
         </script>
+        <script>
+            //点击修改按钮，获取到该行的内容显示到编辑器；
+            $(".news_modify").click(function(e){
+                var id = $(this).attr('content_id');
+                e.preventDefault();
+                $.get('/index.php/Index/news_modify?id='+ id, function(result){
+                    var news = $.parseJSON(result);
+
+                    $('input[name=tab]').val(news.tab);
+                    setContent(htmlDecode(news.content));
+                    $("#publish").html("确认修改");
+                    $("input[name=id]").val(news.id);
+                });
+            })
+            //设置编辑器里显示的内容
+            function setContent(content,isAppendTo) {
+                var arr = [];
+                UE.getEditor('fullNameSuffix').setContent(content, isAppendTo);
+            }
+            function getPlainTxt() {
+                var arr = [];
+                arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
+                arr.push("内容为：");
+                arr.push(UE.getEditor('fullNameSuffix').getPlainTxt());
+                return arr.join('\n');
+            }
+            function htmlEncode(value) {
+                if (value) {
+                    return jQuery('<div />').text(value).html();
+                } else {
+                    return '';
+                }
+            }
+
+            function htmlDecode(value) {
+                if (value) {
+                    return $('<div />').html(value).text();
+                } else {
+                    return '';
+                }
+            }
+        </script>
 
     <else/>
     <div class="user-wrap">
+        <div>
+            <table class="table table-bordered table-striped table-hover" style="width: 60%;margin: 0 auto">
+                <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>账号</th>
+                    <th>昵称</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
 
+                <foreach name="list1" item="vo">
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.account}</td>
+                        <td>{$vo.nickname}</td>
+                        <td>
+                            <a uid="{$vo.id}" href="" class="user_delete btn btn-danger btn-sm">删除</a>
+                        </td>
+                    </tr>
+                </foreach>
+                </tbody>
+            </table>
+        </div>
+        <div class="nav text-center">{$page1}</div>
+        <div style="margin-top: 30px;margin-bottom: 20px">
+            <form class="form-horizontal" action=""  method="get" style="border: 1px solid #bfbfbf;width: 60%;margin: 0 auto;padding:20px 0 10px 0">
+                <p class="text-center" style="font-size: 20px">添加用户</p>
+                <div class="form-group">
+                    <label class="sr-only col-sm-2 control-label">编号</label>
+                    <div class="col-sm-offset-1 col-sm-6">
+                        <input type="text" class="form-control" name="id" placeholder="编号">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only col-sm-2 control-label">账号</label>
+                    <div class="col-sm-offset-1 col-sm-6">
+                        <input type="text" class="form-control" name="account" placeholder="账号">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only col-sm-2 control-label">nickname</label>
+                    <div class="col-sm-offset-1 col-sm-6">
+                        <input type="text" class="form-control" name="nickname" placeholder="昵称">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only col-sm-2 control-label">密码</label>
+                    <div class="col-sm-offset-1 col-sm-6">
+                        <input type="text" class="form-control" name="password" placeholder="密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only col-sm-2 control-label">确认密码</label>
+                    <div class="col-sm-offset-1 col-sm-6">
+                        <input type="text" class="form-control" name="password_2" placeholder="确认密码">
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                        <button type="submit" id="add_account" class="btn btn-default" style="width: 80px;">添加</button>
+                </div>
+            </form>
+        </div>
     </div>
     </if>
 </div>
+
+<script>
+    $("#add_account").click(function(e){
+        var id = $('input[name=id]').val();
+        var account = $('input[name=account]').val();
+        var nickname = $('input[name=nickname]').val();
+        var password = $('input[name=password]').val();
+        var password_2 = $('input[name=password_2]').val();
+        e.preventDefault();
+        $.ajax({
+            url:'/index.php/Index/user_add',
+            type:'post',
+            data:{id:id,account:account,nickname:nickname,password:password,password_2:password_2},
+            dataType:'json',
+            success:function(result){
+                if(result.success){
+                    window.self.location='/index.php/Index/admin?type=2';
+                }else{
+                    alert(result.data);
+                }
+            }
+        })
+    });
+
+    $('.user_delete').click(function(){
+       if(confirm('确定要删除吗？')){
+            var id = $(this).attr('uid');
+            $.ajax({
+                url:'/index.php/Index/user_delete',
+                type:'post',
+                data:{id:id},
+                dataType:'json',
+                success:function(result){
+                    if(result.success){
+                        window.self.location='/index.php/Index/admin?type=2';
+                    }else{
+                        alert(result.data);
+                    }
+                }
+            })
+        }
+    })
+
+
+</script>
+
+
+
+
+
 
 </body>
 </html>

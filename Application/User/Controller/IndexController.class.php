@@ -15,10 +15,17 @@ class IndexController extends Controller {
         /**
          * 根据cookie获取昵称
          */
-        $UserModel = D('User');
+        $UserModel = M('User');
         $map['account'] = $cookie;
         $nickname = $UserModel->where($map)->getField('nickname');
         $this->assign('nickname',$nickname);
+
+        $count1 = M('user')->count();
+        $Page1  = new \Think\Page($count1,5);
+        $show1  = $Page1->show();
+        $list1 = M('user') ->order('id')->order("id")->limit($Page1->firstRow,$Page1->listRows)->select();
+        $this->assign('list1',$list1);// 赋值数据集
+        $this->assign('page1',$show1);// 赋值分页输出
 
         /**
          * 循环出coin表数据
@@ -373,8 +380,10 @@ class IndexController extends Controller {
 
     public function publish(){
         header("Content-type:text/html;charset=utf8");
+        $id = I('get.id');
         $tab = I('get.tab');
         $content = I('get.content');
+
         if(empty($tab)){
             $result=array();
             $result['status']=true;
@@ -394,26 +403,45 @@ class IndexController extends Controller {
         }
 
 
-
+        $map['id'] = $id;
         $data['content'] = $content;
         $data['tab'] = $tab;
         $data['create_time'] = date("Y-m-d H:i:s");
-        $News = M('news')->add($data);
 
-        if($News){
-            $result=array();
-            $result['success']=true;
-            $result['data']='发布成功';
+        if(empty($id)){
+            $News = M('news')->add($data);
+            if($News){
+                $result=array();
+                $result['success']=true;
+                $result['data']='发布成功';
 
-            echo json_encode($result);
-            die();
+                echo json_encode($result);
+                die();
+            }else{
+                $result=array();
+                $result['success']=false;
+                $result['data']='发布失败';
+
+                echo json_encode($result);
+                die();
+            }
         }else{
-            $result=array();
-            $result['success']=false;
-            $result['data']='发布失败';
+            $News = M('news')->where($map)->save($data);
+            if($News){
+                $result=array();
+                $result['success']=true;
+                $result['data']='编辑成功';
 
-            echo json_encode($result);
-            die();
+                echo json_encode($result);
+                die();
+            }else{
+                $result=array();
+                $result['success']=false;
+                $result['data']='编辑失败';
+
+                echo json_encode($result);
+                die();
+            }
         }
     }
 
@@ -440,10 +468,135 @@ class IndexController extends Controller {
         $news = M('news');
         $map['id'] = $id;
         $News = $news->where($map)->find();
-//        $result_arr = mysql_fetch_assoc($News);
-
         echo json_encode($News);
-
         die();
+    }
+
+
+    /**
+     * 后台增加用户
+     */
+    public function user_add(){
+        $id = trim(I('post.id'));
+        $account = trim(I('post.account'));
+        $nickname = trim(I('post.nickname'));
+        $password = trim(I('post.password'));
+        $password_2 = trim(I('post.password_2'));
+        if(empty($id)){
+            $result=array();
+            $result['success']= false;
+            $result['data'] = '请输入编号';
+            echo json_encode($result);
+            die();
+        }elseif(!is_numeric($id)){
+            $result=array();
+            $result['success']= false;
+            $result['data'] = '编号只能为数字';
+            echo json_encode($result);
+            die();
+        }else{
+            $map['id'] = $id;
+            $result11 = M('user')->where($map)->find();
+            if($result11){
+                $result=array();
+                $result['success']= false;
+                $result['data'] = '编号已被注册';
+                echo json_encode($result);
+                die();
+            }
+        }
+        if(empty($account)){
+            $result=array();
+            $result['success']= false;
+            $result['data'] = '请输入账号';
+            echo json_encode($result);
+            die();
+        }else{
+            $map['account']= $account;
+            $user = M('user')->where($map)->find();
+            if($user){
+                $result=array();
+                $result['success']= false;
+                $result['data'] = '账号已被注册';
+                echo json_encode($result);
+                die();
+            }
+        }
+
+        if(empty($nickname)){
+            $result=array();
+            $result['success']= false;
+            $result['data'] = '请填写昵称';
+            echo json_encode($result);
+            die();
+        }
+        if(empty($password)){
+            $result=array();
+            $result['success']= false;
+            $result['data'] = '请填写密码';
+            echo json_encode($result);
+            die();
+        }
+        if(empty($password_2)){
+            $result=array();
+            $result['success']= false;
+            $result['data'] = '请填写确认密码';
+            echo json_encode($result);
+            die();
+        }elseif($password!=$password_2){
+            $result=array();
+            $result['success']= false;
+            $result['data'] = '两次密码输入不一致';
+            echo json_encode($result);
+            die();
+        }
+        $data['id'] = $id;
+        $data['account'] = $account;
+        $data['nickname'] = $nickname;
+        $data['password'] =md5($password);
+        $User = M('user')->add($data);
+        if($User){
+            $result=array();
+            $result['success']= true;
+            $result['data'] = '添加成功';
+            echo json_encode($result);
+            die();
+        }else{
+            $result=array();
+            $result['success']= false;
+            $result['data'] = '添加失败';
+            echo json_encode($result);
+            die();
+        }
+
+    }
+
+    public function user_delete(){
+        $id = I('post.id');
+        if(empty($id)){
+            $result=array();
+            $result['success']= false;
+            $result['data'] = '系统错误';
+            echo json_encode($result);
+            die();
+        }
+
+        $map['id']  = $id;
+        $User = M('user')->where($map)->delete();
+        if($User){
+            $result=array();
+            $result['success']= true;
+            $result['data'] = '删除成功';
+            echo json_encode($result);
+            die();
+        }else{
+            $result=array();
+            $result['success']= false;
+            $result['data'] = '删除失败';
+            echo json_encode($result);
+            die();
+        }
+
+
     }
 }
