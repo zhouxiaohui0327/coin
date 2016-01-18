@@ -5,17 +5,33 @@ use Think\Controller;
 class CoinController extends Controller{
     public function select(){
         header("Content:text/html;charset=utf-8");
+        $Coin=M('coin');
+        $id = I('get.id');
 
+        if(empty($id)){
+            $content= $Coin->order('id desc')->find();
+        }else{
+            $map['id'] = $id;
+            $content = $Coin->where($map)->find();
+        }
+        $now = date("Y-m-d");
+        if($now<$content['apply_start']||$now>$content['exchange_end']){
+            header('location:/index.php/Coin/notice');
+        }
         $this->display();
-
     }
 
     public function notice(){
 
-        $coin_id = I('get.coin_id');
-        $coin =M('coin');
-        $map['id'] = $coin_id;
-        $coinInfo = $coin -> where($map) -> find();
+        $coin_id = trim(I('get.coin_id'));
+        if(empty($coin_id)){
+            $coin =M('coin');
+            $coinInfo = $coin ->order('id desc') -> find();
+        }else{
+            $coin =M('coin');
+            $map['id'] = $coin_id;
+            $coinInfo = $coin -> where($map) -> find();
+        }
 
         $this->assign('coinInfo',$coinInfo);
 
