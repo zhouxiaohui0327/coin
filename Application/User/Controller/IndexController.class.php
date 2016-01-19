@@ -32,7 +32,7 @@ class IndexController extends Controller {
          */
 
         $CoinModel =M('coin');
-        $coinInfo = $CoinModel ->order('id asc')-> select();
+        $coinInfo = $CoinModel ->order('id desc')-> select();
 
         $this->assign('coinInfo',$coinInfo);
 
@@ -41,7 +41,7 @@ class IndexController extends Controller {
          */
 
         $BankModel =M('bank');
-        $bankInfo = $BankModel ->order('id asc')-> select();
+        $bankInfo = $BankModel ->order('id desc')-> select();
 
         $this->assign('bankInfo',$bankInfo);
 
@@ -60,7 +60,7 @@ class IndexController extends Controller {
         $areaModel =M('area');
 
         for($x=0;$x<$count;$x++){
-             $areaInfo[] = $areaModel ->where("bank_id=$bank_ids[$x]")->order('id asc')-> select();
+             $areaInfo[] = $areaModel ->where("bank_id=$bank_ids[$x]")->order('id desc')-> select();
         }
 
         $type = I('get.type');
