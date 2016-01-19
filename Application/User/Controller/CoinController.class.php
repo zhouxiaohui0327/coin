@@ -15,7 +15,7 @@ class CoinController extends Controller{
             $content = $Coin->where($map)->find();
         }
         $now = date("Y-m-d");
-        if($now<$content['apply_start']||$now>$content['exchange_end']){
+        if($now<$content['apply_start']||$now>$content['apply_end']){
             header('location:/index.php/Coin/notice');
         }
         $this->display();
