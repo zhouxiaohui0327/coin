@@ -64,6 +64,9 @@ class IndexController extends Controller {
         }
 
         $type = I('get.type');
+        if(empty($type)){
+            $type=0;
+        }
 
         $this -> assign('areaInfo',$areaInfo);
         $this -> assign('count',$count);
@@ -73,7 +76,7 @@ class IndexController extends Controller {
         $count = M('news')->count();
         $Page  = new \Think\Page($count,5);
         $show  = $Page->show();
-        $list = M('news') ->order('id')->order("id desc")->limit($Page->firstRow,$Page->listRows)->select();
+        $list = M('news')->order("id desc")->limit($Page->firstRow,$Page->listRows)->select();
         $this->assign('list',$list);// 赋值数据集
         $this->assign('page',$show);// 赋值分页输出
         $this->display();
