@@ -12,7 +12,6 @@ class IndexController extends Controller {
             header('location:/index.php/Index/enter');
         }
 
-
         /**
          * 根据cookie获取昵称
          */
