@@ -81,9 +81,8 @@ class IndexController extends Controller {
         $this->assign('page',$show);// 赋值分页输出
         $this->display();
         echo $_SERVER['HTTP_HOST'].$_SERVER["QUERY_STRING"].'</br>';
-        echo $_SERVER["QUERY_STRING"];
         echo get_url().'</br>';
-        echo $_GET['_URL_'][1];
+        echo $this->_param('p');
 
     }
 
