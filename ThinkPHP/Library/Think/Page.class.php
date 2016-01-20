@@ -85,7 +85,7 @@ class Page{
 
         /* 生成URL */
         $this->parameter[$this->p] = '[PAGE]';
-        $this->url = explode('.',U(ACTION_NAME, $this->parameter))[0];
+        $this->url= $xxx[0]= explode('.',U(ACTION_NAME, $this->parameter));
         /* 计算分页信息 */
         $this->totalPages = ceil($this->totalRows / $this->listRows); //总页数
         if(!empty($this->totalPages) && $this->nowPage > $this->totalPages) {
