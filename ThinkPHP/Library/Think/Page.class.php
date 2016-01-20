@@ -100,10 +100,9 @@ class Page{
         $down_page = ($down_row <= $this->totalPages) ? '<a class="next" href="' . $this->url($down_row) . '">' . $this->config['next'] . '</a>' : '';
 
         //第一页
-        $url11 = '/index.php';
         $the_first = '';
         if($this->totalPages > $this->rollPage && ($this->nowPage - $now_cool_page) >= 1){
-            $the_first = '<a class="first" href="'.$url11 . $_SERVER['PHP_SELF'] . '">' . $this->config['first'] . '</a>';
+            $the_first = '<a class="first" href="' . $this->url(1) . '">' . $this->config['first'] . '</a>';
         }
 
         //最后一页

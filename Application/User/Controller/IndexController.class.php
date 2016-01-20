@@ -80,7 +80,9 @@ class IndexController extends Controller {
         $this->assign('list',$list);// 赋值数据集
         $this->assign('page',$show);// 赋值分页输出
         $this->display();
-        echo $_SERVER['PHP_SELF'];
+        $url11 = $_SERVER['PHP_SELF'];
+
+        echo "<a href='/inden.php$url11'>tiaozhuan</a>";
 
     }
 
