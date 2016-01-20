@@ -70,7 +70,9 @@ class Page{
      * @return string
      */
     private function url($page){
-
+        $this->url =U(ACTION_NAME, $this->parameter);
+        $xxx = explode(".",U(ACTION_NAME, $this->parameter));
+        $this->url ='/index.php'. $xxx[0];
         return str_replace(urlencode('[PAGE]'), $page, $this->url);
     }
 
