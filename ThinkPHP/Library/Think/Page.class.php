@@ -102,7 +102,7 @@ class Page{
         //第一页
         $the_first = '';
         if($this->totalPages > $this->rollPage && ($this->nowPage - $now_cool_page) >= 1){
-            $the_first = '<a class="first" href="' . $this->url(1) . '">' . $this->config['first'] . '</a>';
+            $the_first = '<a class="first" href="' ."/index". $this->url(1) . '">' . $this->config['first'] . '</a>';
         }
 
         //最后一页
