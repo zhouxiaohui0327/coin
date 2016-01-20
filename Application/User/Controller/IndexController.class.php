@@ -82,7 +82,7 @@ class IndexController extends Controller {
         $this->display();
         echo $_SERVER['HTTP_HOST'].$_SERVER["QUERY_STRING"].'</br>';
         echo get_url().'</br>';
-        echo $this->_param('p');
+        echo $_GET['p'];
 
     }
 
