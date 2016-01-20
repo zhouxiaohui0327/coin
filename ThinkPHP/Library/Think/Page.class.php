@@ -70,7 +70,7 @@ class Page{
      * @return string
      */
     private function url($page){
-        $URL = $_SERVER['HTTP_HOST'].$_SERVER["QUERY_STRING"];
+        $URL = get_url();
         return str_replace($_GET['p'], $page, $URL);
     }
 

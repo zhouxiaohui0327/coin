@@ -80,7 +80,9 @@ class IndexController extends Controller {
         $this->assign('list',$list);// 赋值数据集
         $this->assign('page',$show);// 赋值分页输出
         $this->display();
-    
+        echo $_SERVER['HTTP_HOST'].$_SERVER["QUERY_STRING"].'</br>';
+        echo get_url().'</br>';
+        echo $_GET['p'];
 
     }
 
