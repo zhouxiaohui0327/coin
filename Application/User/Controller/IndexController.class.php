@@ -112,7 +112,7 @@ class IndexController extends Controller {
         {
             if($userModel['password'] == md5($password))
             {
-                header("location:/index.php/Index/admin");
+                header("location:/Index/admin");
                 setcookie("user","$account",time()+3600);
             }
             else
