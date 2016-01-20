@@ -24,22 +24,22 @@
 </head>
 <body>
 <header class="container-fuld clearfix">
-    <if condition="$type==0">
-        <a href="/index.php/Index/admin?type=0"  class="btn btn-sm pull-left nav-a nav-active">核心数据</a>
-        <a href="/index.php/Index/admin/type/1/p/1"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">静态页面管理</a>
-        <a href="/index.php/Index/admin/type/2/p/2"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">用户管理</a>
-    <elseif condition="$type==1"/>
-        <a href="/index.php/Index/admin?type=0"  class="btn btn-sm pull-left nav-a">核心数据</a>
-        <a href="/index.php/Index/admin/type/1/p/1"  class="btn btn-sm pull-left nav-a nav-active" style="margin-left: -1px">静态页面管理</a>
-        <a href="/index.php/Index/admin/type/2/p/2"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">用户管理</a>
-    <elseif condition="$type==2"/>
-        <a href="/index.php/Index/admin?type=0"  class="btn btn-sm pull-left nav-a">核心数据</a>
-        <a href="/index.php/Index/admin/type/1/p/1"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">静态页面管理</a>
-        <a href="/index.php/Index/admin/type/2/p/2"  class="btn btn-sm pull-left nav-a nav-active" style="margin-left: -1px">用户管理</a>
+    <if condition="$type=='sj'">
+        <a href="/index.php/Index/admin?type=sj"  class="btn btn-sm pull-left nav-a nav-active">核心数据</a>
+        <a href="/index.php/Index/admin/type/ym/p/1"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">静态页面管理</a>
+        <a href="/index.php/Index/admin/type/ur/p/2"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">用户管理</a>
+    <elseif condition="$type=='ym'"/>
+        <a href="/index.php/Index/admin?type=sj"  class="btn btn-sm pull-left nav-a">核心数据</a>
+        <a href="/index.php/Index/admin/type/ym/p/1"  class="btn btn-sm pull-left nav-a nav-active" style="margin-left: -1px">静态页面管理</a>
+        <a href="/index.php/Index/admin/type/ur/p/2"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">用户管理</a>
+    <elseif condition="$type==ur"/>
+        <a href="/index.php/Index/admin?type=sj"  class="btn btn-sm pull-left nav-a">核心数据</a>
+        <a href="/index.php/Index/admin/type/ym/p/1"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">静态页面管理</a>
+        <a href="/index.php/Index/admin/type/ur/p/2"  class="btn btn-sm pull-left nav-a nav-active" style="margin-left: -1px">用户管理</a>
      <else/>
-        <a href="/index.php/Index/admin?type=0"  class="btn btn-sm pull-left nav-a">核心数据</a>
-        <a href="/index.php/Index/admin/type/1/p/1"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">静态页面管理</a>
-        <a href="/index.php/Index/admin/type/2/p/2"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">用户管理</a>
+        <a href="/index.php/Index/admin?type=sj"  class="btn btn-sm pull-left nav-a">核心数据</a>
+        <a href="/index.php/Index/admin/type/ym/p/1"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">静态页面管理</a>
+        <a href="/index.php/Index/admin/type/ur/p/2"  class="btn btn-sm pull-left nav-a" style="margin-left: -1px">用户管理</a>
      </if>
 
     <a  href="javascript:loginOut()" class="loginOutBtn pull-right btn btn-sm" style="border-left: 1px solid grey">退出</a>

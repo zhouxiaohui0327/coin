@@ -65,7 +65,7 @@ class IndexController extends Controller {
 
         $type = I('get.type');
         if(empty($type)){
-            $type=0;
+            $type='sj';
         }
 
         $this -> assign('areaInfo',$areaInfo);
