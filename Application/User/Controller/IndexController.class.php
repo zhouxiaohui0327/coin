@@ -69,6 +69,7 @@ class IndexController extends Controller {
         $this -> assign('count',$count);
         $this -> assign('type',$type);
 
+        import('ORG.Util.Page');
         $count = M('news')->count();
         $Page  = new \Think\Page($count,5);
         $show  = $Page->show();
@@ -108,7 +109,7 @@ class IndexController extends Controller {
         {
             if($userModel['password'] == md5($password))
             {
-                header("location:/index.php/Index/admin");
+                header("location:/Index/admin");
                 setcookie("user","$account",time()+3600);
             }
             else

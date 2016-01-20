@@ -1,18 +1,18 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <title></title>
-    <load href='/Public/js/jquery-2.1.4.js' />
-    <load href='/Public/js/myJs.js' />
-    <load href='/Public/css/base.css' />
+    <script type="text/javascript" src="/Public/js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="/Public/js/myJs.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Public/css/base.css" />
 </head>
 <body>
 <div class="container" style="margin-top: 50px">
     <div style="margin-top: 100px">
         <p class="text-center" style="font-size: 25px;">SIGN IN</p>
-        <form class="form-horizontal" action="/Index/enterPost" method="post">
+        <form class="form-horizontal" action="/index.php/Index/enterPost" method="post">
             <div class="form-group">
                 <label for="inputaccount" class="sr-only col-sm-2 control-label">账号</label>
                 <div class="col-sm-offset-2 col-sm-4">
