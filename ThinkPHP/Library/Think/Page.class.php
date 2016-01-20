@@ -70,9 +70,9 @@ class Page{
      * @return string
      */
     private function url($page){
-        $this->url =U(ACTION_NAME, $this->parameter);
-        $xxx = explode(".",U(ACTION_NAME, $this->parameter));
-        $this->url ='/index.php'. $xxx[0];
+//        $this->url =U(ACTION_NAME, $this->parameter);
+//        $xxx = explode(".",U(ACTION_NAME, $this->parameter));
+//        $this->url ='/index.php'. $xxx[0];
         return str_replace(urlencode('[PAGE]'), $page, $this->url);
     }
 
@@ -86,8 +86,8 @@ class Page{
         /* 生成URL */
         $this->parameter[$this->p] = '[PAGE]';
         $this->url = U(ACTION_NAME, $this->parameter);
-        $xxx = explode(".",U(ACTION_NAME, $this->parameter));
-        $this->url ='/index.php'. $xxx[0];
+//        $xxx = explode(".",U(ACTION_NAME, $this->parameter));
+//        $this->url ='/index.php'. $xxx[0];
         /* 计算分页信息 */
         $this->totalPages = ceil($this->totalRows / $this->listRows); //总页数
         if(!empty($this->totalPages) && $this->nowPage > $this->totalPages) {
