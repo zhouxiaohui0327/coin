@@ -71,8 +71,8 @@ class Page{
      */
     private function url($page){
         $this->parameter[$this->p] = '[PAGE]';
-        $this->url= $xxx[0]= explode('.',U(ACTION_NAME, $this->parameter));
-        return str_replace(urlencode('[PAGE]'), $page, $this->url);
+        $this->url= explode('.',U(ACTION_NAME, $this->parameter));
+        return str_replace(urlencode('[PAGE]'), $page, $this->url[0]);
     }
 
     /**
