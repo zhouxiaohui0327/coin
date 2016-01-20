@@ -73,7 +73,8 @@ class Page{
         $this->url =U(ACTION_NAME, $this->parameter);
         $xxx = explode(".",U(ACTION_NAME, $this->parameter));
         $this->url ='/index.php'. $xxx[0];
-        return str_replace("3", $page, $this->url);
+        $yyy = substr($this->url,strlen($this->url)-1,strlen($this->url));
+        return str_replace($yyy, $page, $this->url);
     }
 
     /**
