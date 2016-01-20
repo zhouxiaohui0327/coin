@@ -70,11 +70,7 @@ class Page{
      * @return string
      */
     private function url($page){
-//        $this->url =U(ACTION_NAME, $this->parameter);
-//        $xxx = explode(".",U(ACTION_NAME, $this->parameter));
-//        $this->url ='/index.php'. $xxx[0];
         $URL = $_SERVER['HTTP_HOST'].$_SERVER["QUERY_STRING"];
-//        $yyy = substr($this->url,strlen($this->url)-1,strlen($this->url));
         return str_replace($_GET['p'], $page, $URL);
     }
 
