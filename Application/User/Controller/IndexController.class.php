@@ -83,7 +83,7 @@ class IndexController extends Controller {
 
         echo U(ACTION_NAME, $this->parameter).'<br>';
 
-        $xxx = explode(U(ACTION_NAME, $this->parameter),".");
+        $xxx = explode(".",U(ACTION_NAME, $this->parameter));
 
         echo $xxx[0];
 
