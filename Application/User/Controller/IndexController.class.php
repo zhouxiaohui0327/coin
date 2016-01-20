@@ -81,10 +81,6 @@ class IndexController extends Controller {
         $this->assign('page',$show);// 赋值分页输出
         $this->display();
 
-
-       echo U(ACTION_NAME, $this->parameter);
-
-
     }
 
     public  function enter(){
