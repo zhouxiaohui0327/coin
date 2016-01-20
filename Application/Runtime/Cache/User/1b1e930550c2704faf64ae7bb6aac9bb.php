@@ -245,7 +245,7 @@
                     <th colspan="8">地区</th>
                 </tr>
 
-                <?php $__FOR_START_1146__=0;$__FOR_END_1146__=$count;for($i=$__FOR_START_1146__;$i < $__FOR_END_1146__;$i+=1){ ?><tr>
+                <?php $__FOR_START_17594__=0;$__FOR_END_17594__=$count;for($i=$__FOR_START_17594__;$i < $__FOR_END_17594__;$i+=1){ ?><tr>
                         <td><?php echo ($areaInfo[$i][0]['bank_id']); ?></td>
                         <?php if(is_array($areaInfo[$i])): foreach($areaInfo[$i] as $key=>$vo): ?><td><input name="modify_area" bank_id="<?php echo ($vo["bank_id"]); ?>" type="text" value="<?php echo ($vo["area"]); ?>" style="width:80px;border: none"/></td><?php endforeach; endif; ?>
                     </tr><?php } ?>

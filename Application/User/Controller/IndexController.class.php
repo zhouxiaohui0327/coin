@@ -12,6 +12,7 @@ class IndexController extends Controller {
             header('location:/index.php/Index/enter');
         }
 
+
         /**
          * 根据cookie获取昵称
          */
@@ -72,9 +73,9 @@ class IndexController extends Controller {
         $this -> assign('count',$count);
         $this -> assign('type',$type);
 
-        import('ORG.Util.Page');
         $count = M('news')->count();
         $Page  = new \Think\Page($count,5);
+
         $show  = $Page->show();
         $list = M('news')->order("id desc")->limit($Page->firstRow,$Page->listRows)->select();
         $this->assign('list',$list);// 赋值数据集
